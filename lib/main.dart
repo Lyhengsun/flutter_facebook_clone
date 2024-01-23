@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/build_app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(BuildApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sothea App Version 1',
+      title: 'Facebook Clone',
       theme: ThemeData(
         // This is the theme of your application.
         //

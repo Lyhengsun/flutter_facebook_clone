@@ -13,10 +13,11 @@ class Palette {
   static const Color online = Color(0xFF4BCB1F);
 
   static const LinearGradient storyGradient = LinearGradient(
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter,
-      colors: [
-        Colors.transparent,
-        Colors.black26,
-      ]);
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Colors.transparent,
+      Colors.black26,
+    ],
+  );
 }

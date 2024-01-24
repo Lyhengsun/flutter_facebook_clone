@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/screens/home_screen.dart';
 
 class FrontScreen extends StatefulWidget {
   const FrontScreen({super.key});
@@ -22,7 +23,7 @@ class _FrontScreenState extends State<FrontScreen> {
     return IndexedStack(
       index: _currentIndex,
       children: [
-        Container(color: Colors.red,),
+        HomeScreen(),
         Container(color: Colors.blue,),
         Container(color: Colors.green,),
         Container(color: Colors.yellow,),

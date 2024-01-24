@@ -9,19 +9,13 @@ class FrontScreen extends StatefulWidget {
 
 class _FrontScreenState extends State<FrontScreen> {
   int _currentIndex = 0;
-  final AppBar _appBar = AppBar();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar,
       body: _buildBody(),
       bottomNavigationBar: _buildBottom(),
     );
-  }
-
-  PreferredSizeWidget _buildTop() {
-    return AppBar();
   }
 
   Widget _buildBody() {

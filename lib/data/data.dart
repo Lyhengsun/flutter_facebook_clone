@@ -2,23 +2,22 @@ import 'package:flutter_facebook_clone/models/models.dart';
 
 final User currentUser = User(
   name: "Sothea Mab",
-  imageUrl:
-      "https://i.pinimg.com/564x/c8/ff/5a/c8ff5aedb4e15571afabe53b777694f2.jpg",
+  imageUrl: "assets/images/img1 (7).jpg",
 );
 
 final List<User> onlineUser = [
   User(
-      name: "Reak Smey",
-      imageUrl:
-          "https://imgs.search.brave.com/gRI3OuaZNieVIbB-FkbZF3Cg1Zy03WQsIREj_i0NwXQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aXN0b2NrcGhvdG8u/Y29tL3Jlc291cmNl/cy9pbWFnZXMvUGhv/dG9GVExQL0pvYnND/YXJlZXJzLTkwMTU2/ODY2MC5qcGc"),
+    name: "Reak Smey",
+    imageUrl: "assets/images/img1 (1).jpg",
+  ),
   User(
-      name: "Tun Tun",
-      imageUrl:
-          "https://imgs.search.brave.com/gRI3OuaZNieVIbB-FkbZF3Cg1Zy03WQsIREj_i0NwXQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aXN0b2NrcGhvdG8u/Y29tL3Jlc291cmNl/cy9pbWFnZXMvUGhv/dG9GVExQL0pvYnND/YXJlZXJzLTkwMTU2/ODY2MC5qcGc"),
+    name: "Tun Tun",
+    imageUrl: "assets/images/img1 (2).jpg",
+  ),
   User(
-      name: "Penh Vong",
-      imageUrl:
-          "https://imgs.search.brave.com/gRI3OuaZNieVIbB-FkbZF3Cg1Zy03WQsIREj_i0NwXQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aXN0b2NrcGhvdG8u/Y29tL3Jlc291cmNl/cy9pbWFnZXMvUGhv/dG9GVExQL0pvYnND/YXJlZXJzLTkwMTU2/ODY2MC5qcGc"),
+    name: "Putny",
+    imageUrl: "assets/images/img1 (3).jpg",
+  ),
   User(
       name: "Vireak",
       imageUrl:

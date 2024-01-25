@@ -2,7 +2,8 @@ import 'package:flutter_facebook_clone/models/models.dart';
 
 final User currentUser = User(
   name: "Sothea Mab",
-  imageUrl: 'assets/images/img1(1).jpg',
+      imageUrl:
+        "assets/images/img1 (1).jpg",
 );
 
 final List<User> onlineUser = [

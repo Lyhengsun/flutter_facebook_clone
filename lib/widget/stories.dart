@@ -38,7 +38,8 @@ class Stories extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: 4.0,
             ),
-// Add currentUser: currentUser
+
+            // Add currentUser: currentUser
             child: _StoryCard(
               story: story,
               currentUser: currentUser,
@@ -49,7 +50,6 @@ class Stories extends StatelessWidget {
     );
   }
 }
-
 
 class _StoryCard extends StatelessWidget {
   final bool isAddStory;
@@ -77,6 +77,3 @@ class _StoryCard extends StatelessWidget {
     );
   }
 }
-
-
-//https://poe.com/chat/2pikabh6ctcv7o2c27v

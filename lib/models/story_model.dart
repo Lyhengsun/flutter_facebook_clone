@@ -1,5 +1,5 @@
 import 'package:flutter_facebook_clone/models/user_model.dart';
-// ignore: unused_import
+// ignore: unused_import, depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 class Story {
@@ -10,6 +10,6 @@ class Story {
   const Story({
     required this.user,
     required this.imageUrl,
-    this.isViewed=false,
+    this.isViewed = false,
   });
 }

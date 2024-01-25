@@ -44,14 +44,12 @@ class HomeScreen extends StatelessWidget {
             child: CreatePostContainer(currentUser: currentUser),
           ),
           SliverPadding(
-            // It most be assign value of padding in SliverPadding
             padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
             sliver: SliverToBoxAdapter(
               child: Room(onlineUsers: onlineUser),
             ),
           ),
           SliverPadding(
-            // It most be assign value of padding in SliverPadding
             padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
             sliver: SliverToBoxAdapter(
               child: Stories(

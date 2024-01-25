@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/config/palett.dart';
 
 class ProfileAvatar extends StatelessWidget {
   final String imageUrl;
@@ -12,10 +13,32 @@ class ProfileAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 20.0,
-      backgroundColor: Colors.grey[200],
-      backgroundImage: AssetImage(imageUrl),
+    return Stack(
+      children: [
+        CircleAvatar(
+          radius: 20.0,
+          backgroundColor: Colors.grey[200],
+          backgroundImage: AssetImage(imageUrl),
+        ),
+        isActive
+            ? Positioned(
+                bottom: 0.0,
+                right: 0.0,
+                child: Container(
+                  height: 15.0,
+                  width: 15.0,
+                  decoration: BoxDecoration(
+                    color: Palette.online,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 2.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            : const SizedBox.shrink(),
+      ],
     );
   }
 }

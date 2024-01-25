@@ -36,17 +36,44 @@ class CreatePostContainer extends StatelessWidget {
             height: 10.0,
             thickness: 0.5,
           ),
-          Row(
-            children: [
-              TextButton.icon(
-                onPressed: () => print('Live'),
-                icon: Icon(
-                  Icons.videocam,
-                  color: Colors.red,
+          Container(
+            // Assign value to hieght
+            height: 40.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton.icon(
+                  onPressed: () => print('Live'),
+                  icon: Icon(
+                    Icons.videocam,
+                    color: Colors.red,
+                  ),
+                  label: Text('Live'),
                 ),
-                label: Text('Live'),
-              ),
-            ],
+                const VerticalDivider(
+                  width: 8.0,
+                ),
+                TextButton.icon(
+                  onPressed: () => print('Photo'),
+                  icon: Icon(
+                    Icons.photo_library,
+                    color: Colors.green,
+                  ),
+                  label: Text('Photo'),
+                ),
+                const VerticalDivider(
+                  width: 8.0,
+                ),
+                TextButton.icon(
+                  onPressed: () => print('Room'),
+                  icon: Icon(
+                    Icons.video_call,
+                    color: Colors.purpleAccent,
+                  ),
+                  label: Text('Room'),
+                ),
+              ],
+            ),
           ),
         ],
       ),

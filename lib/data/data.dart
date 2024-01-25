@@ -2,7 +2,7 @@ import 'package:flutter_facebook_clone/models/models.dart';
 
 final User currentUser = User(
   name: "Sothea Mab",
-  imageUrl: "assets/images/img1 (7).jpg",
+  imageUrl: 'assets/images/img1(1).jpg',
 );
 
 final List<User> onlineUser = [
@@ -67,23 +67,11 @@ final List<User> onlineUser = [
 final List<Story> stories = [
   Story(
     user: onlineUser[1],
-    imageUrl: "assets/images/img1 (1).jpg",
+    imageUrl: 'assets/images/img1(1).jpg',
   ),
   Story(
     user: onlineUser[2],
-    imageUrl: "assets/images/img1 (2).jpg",
-  ),
-  Story(
-    user: onlineUser[3],
-    imageUrl: "assets/images/img1 (3).jpg",
-  ),
-  Story(
-    user: onlineUser[4],
-    imageUrl: "assets/images/img1 (4).jpg",
-  ),
-  Story(
-    user: onlineUser[5],
-    imageUrl: "assets/images/img1 (5).jpg",
+    imageUrl: 'assets/images/img1(2).jpg',
   ),
 ];
 

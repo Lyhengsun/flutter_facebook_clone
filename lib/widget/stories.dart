@@ -38,7 +38,7 @@ class Stories extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: 4.0,
             ),
-            // Add currentUser: currentUser
+// Add currentUser: currentUser
             child: _StoryCard(
               story: story,
               currentUser: currentUser,
@@ -50,33 +50,6 @@ class Stories extends StatelessWidget {
   }
 }
 
-// class _StoryCard extends StatelessWidget {
-//   final bool isAddStory;
-//   final User currentUser;
-//   final Story? story;
-
-//   const _StoryCard({
-//     Key? key,
-//     this.isAddStory = false,
-//     required this.currentUser,
-//     // remove required in required => this.story
-//     this.story,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Stack(
-//       children: [
-//         CachedNetworkImage(
-//           imageUrl: isAddStory ? currentUser.imageUrl: story.imageUrl,
-//           height: double.infinity,
-//           width: 110.0,
-//           fit: BoxFit.cover,
-//         ),
-//       ],
-//     );
-//   }
-// }
 
 class _StoryCard extends StatelessWidget {
   final bool isAddStory;

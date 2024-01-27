@@ -16,38 +16,41 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.white,
-            title: const Text(
-              "facebook",
-              style: TextStyle(
-                color: Palette.facebookBlue,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
+      body: Container(
+        color: Colors.grey,
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              title: const Text(
+                "facebook",
+                style: TextStyle(
+                  color: Palette.facebookBlue,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              actions: [
+                CircleButton(
+                  icon: Icons.search,
+                  iconSize: 28,
+                  onPressed: () {},
+                  margin: EdgeInsets.only(right: 10),
+                ),
+                CircleButton(
+                  icon: MdiIcons.facebookMessenger,
+                  iconSize: 23,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            SliverToBoxAdapter(
+              child: CreatePostContainer(
+                currentUser: currentUser,
               ),
             ),
-            actions: [
-              CircleButton(
-                icon: Icons.search,
-                iconSize: 28,
-                onPressed: () {},
-                margin: EdgeInsets.only(right: 10),
-              ),
-              CircleButton(
-                icon: MdiIcons.facebookMessenger,
-                iconSize: 23,
-                onPressed: () {},
-              ),
-            ],
-          ),
-          SliverToBoxAdapter(
-            child: CreatePostContainer(
-              currentUser: currentUser,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

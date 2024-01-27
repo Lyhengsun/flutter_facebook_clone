@@ -28,6 +28,7 @@ class ActionButton extends StatelessWidget {
           shadowColor: Colors.transparent,
           backgroundColor: backgroundColor,
           foregroundColor: foregroundColor,
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 0),
         ),
       ),
     );

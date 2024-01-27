@@ -11,31 +11,37 @@ class CreatePostContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-        color: Colors.orange,
+        padding: EdgeInsets.fromLTRB(12, 8, 12, 0),
+        color: Colors.white,
         child: Column(
           children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  backgroundImage:
-                      CachedNetworkImageProvider(currentUser.imageURL),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: TextField(
-                      decoration: InputDecoration.collapsed(
-                        hintText: "What\'s on your mind today?",
-                        hintStyle: TextStyle(color: Colors.grey),
+            Container(
+              padding: EdgeInsets.only(bottom: 8),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.grey,
+                    backgroundImage:
+                        CachedNetworkImageProvider(currentUser.imageURL),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: TextField(
+                        decoration: InputDecoration.collapsed(
+                          hintText: "What\'s on your mind today?",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            Divider(),
+            Divider(
+              thickness: 1,
+              height: 0,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -46,13 +52,15 @@ class CreatePostContainer extends StatelessWidget {
                 ),
                 ActionButton(
                   onPressed: () {},
-                  icon: Icons.photo,
+                  icon: Icons.photo_library,
                   label: Text("Photo"),
+                  foregroundColor: Colors.green,
                 ),
                 ActionButton(
                   onPressed: () {},
-                  icon: Icons.cameraswitch,
+                  icon: Icons.video_call,
                   label: Text("Room"),
+                  foregroundColor: Colors.purple,
                 ),
               ],
             ),

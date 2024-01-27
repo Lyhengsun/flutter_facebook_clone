@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
 
 final User currentUser = User(

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/config/palette.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_facebook_clone/data/data.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,11 +36,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 margin: EdgeInsets.only(right: 10),
               ),
               CircleButton(
-                icon: Icons.search,
-                iconSize: 28,
+                icon: MdiIcons.facebookMessenger,
+                iconSize: 23,
                 onPressed: () {},
               ),
             ],
+          ),
+          SliverToBoxAdapter(
+            child: CreatePostContainer(
+              currentUser: currentUser,
+            ),
           ),
         ],
       ),

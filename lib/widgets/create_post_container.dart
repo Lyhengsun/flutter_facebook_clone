@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
+import 'package:flutter_facebook_clone/widgets/widgets.dart';
 
 class CreatePostContainer extends StatelessWidget {
   final User currentUser;
@@ -36,17 +37,23 @@ class CreatePostContainer extends StatelessWidget {
             ),
             Divider(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton.icon(
+                ActionButton(
                   onPressed: () {},
-                  icon: Icon(Icons.videocam),
+                  icon: Icons.videocam,
                   label: Text("Live"),
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    shadowColor: Colors.transparent,
-                    backgroundColor: Colors.transparent,
-                  ),
-                )
+                ),
+                ActionButton(
+                  onPressed: () {},
+                  icon: Icons.photo,
+                  label: Text("Photo"),
+                ),
+                ActionButton(
+                  onPressed: () {},
+                  icon: Icons.cameraswitch,
+                  label: Text("Room"),
+                ),
               ],
             ),
           ],

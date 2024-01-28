@@ -1,6 +1,7 @@
 class User {
   final String name;
   final String imageURL;
+  bool isActive;
 
-  const User({required this.name, required this.imageURL});
+  User({required this.name, required this.imageURL, this.isActive = false});
 }

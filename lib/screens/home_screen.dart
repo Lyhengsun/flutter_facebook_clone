@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.grey,
+        color: Color(0xFFF4F4F4),
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -49,9 +49,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 currentUser: currentUser,
               ),
             ),
-            SliverToBoxAdapter(
-              child: Rooms(
-                onlineUsers: onlineUsers,
+            SliverPadding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
+              sliver: SliverToBoxAdapter(
+                child: Rooms(
+                  onlineUsers: onlineUsers,
+                ),
               ),
             )
           ],

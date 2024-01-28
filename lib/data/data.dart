@@ -1,40 +1,48 @@
 import 'package:flutter_facebook_clone/models/models.dart';
 
 final User currentUser = User(
-    name: "Aijou Rentarou",
-    imageURL:
-        "https://static.wikia.nocookie.net/100kanojo/images/e/e2/RentarouAnimeInfobox.png/revision/latest?cb=20240118045820");
+  name: "Aijou Rentarou",
+  imageURL:
+      "https://static.wikia.nocookie.net/100kanojo/images/e/e2/RentarouAnimeInfobox.png/revision/latest?cb=20240118045820",
+  isActive: true,
+);
 
 final List<User> onlineUsers = [
   User(
     name: "Hanazono Hakari",
-    imageURL:
-        "https://static.wikia.nocookie.net/100kanojo/images/0/0a/HakariAnimeInfobox.png/revision/latest?cb=20240118051455",
+    imageURL: "https://static.wikia.nocookie.net/100kanojo/images/0/0a/HakariAnimeInfobox.png/revision/latest?cb=20240118051455",
+    isActive: true,
   ),
   User(
     name: "Inda Karane",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/6/69/KaraneAnimeInfobox.png/revision/latest?cb=20240118051853",
+    isActive: true,
   ),
   User(
     name: "Yoshimoto Shizuka",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/1/16/ShizukaAnimeInfobox.png/revision/latest?cb=20240118071619",
+    isActive: true,
   ),
   User(
     name: "Eiai Nano",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/f/fa/NanoAnimeInfobox.png/revision/latest?cb=20240118071204",
+    isActive: true,
   ),
   User(
     name: "Yakuzen Kusuri",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/f/fb/KusuriAnimeInfobox.png/revision/latest?cb=20240118080342",
+    isActive: false,
   ),
   User(
     name: "Hanazono Hahari",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/3/30/HahariAnimeInfobox.png/revision/latest?cb=20240118082226",
+    isActive: false,
+
   )
 ];
 

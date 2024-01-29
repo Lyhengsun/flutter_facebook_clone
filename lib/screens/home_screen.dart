@@ -56,6 +56,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   onlineUsers: onlineUsers,
                 ),
               ),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
+              sliver: SliverToBoxAdapter(
+                child: Stories(currentUser: currentUser, stories: stories,),
+              ),
             )
           ],
         ),

@@ -88,13 +88,15 @@ class _StoryCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          width: 110,
+          width: 96,
           bottom: 0,
           child: Padding(
             padding: EdgeInsets.all(8),
             child: Text(
               isAddStory ? "Add to Story" : story!.user.name,
               textAlign: isAddStory ? TextAlign.center : TextAlign.left,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 color: Colors.white,

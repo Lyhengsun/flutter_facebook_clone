@@ -46,31 +46,28 @@ final List<User> onlineUsers = [
   )
 ];
 
+String rentaruImageURL = "https://static.wikia.nocookie.net/100kanojo/images/e/e2/RentarouAnimeInfobox.png/revision/latest?cb=20240118045820";
+String blankImageURL = "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg";
+
 final List<Story> stories = [
   Story(
       user: onlineUsers[2],
-      imageURL:
-          "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg"),
+      imageURL: rentaruImageURL),
   Story(
       user: onlineUsers[3],
-      imageURL:
-          "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg"),
+      imageURL: rentaruImageURL),
   Story(
       user: onlineUsers[0],
-      imageURL:
-          "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg"),
+      imageURL: rentaruImageURL),
   Story(
       user: onlineUsers[5],
-      imageURL:
-          "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg"),
+      imageURL: rentaruImageURL),
   Story(
       user: onlineUsers[1],
-      imageURL:
-          "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg"),
+      imageURL: rentaruImageURL),
   Story(
       user: onlineUsers[4],
-      imageURL:
-          "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg"),
+      imageURL: rentaruImageURL),
 ];
 
 final List<Post> posts = [
@@ -78,8 +75,7 @@ final List<Post> posts = [
     user: onlineUsers[0],
     caption: "check out my new boyfriend",
     timeAgo: "58m",
-    imageURL:
-        "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg",
+    imageURL: rentaruImageURL,
     likes: 1284,
     comments: 24,
     shares: 98,
@@ -88,8 +84,7 @@ final List<Post> posts = [
     user: onlineUsers[1],
     caption: "check out my new boyfriend",
     timeAgo: "58m",
-    imageURL:
-        "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg",
+    imageURL: rentaruImageURL,
     likes: 1284,
     comments: 24,
     shares: 98,
@@ -98,8 +93,7 @@ final List<Post> posts = [
     user: onlineUsers[2],
     caption: "check out my new boyfriend",
     timeAgo: "58m",
-    imageURL:
-        "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg",
+    imageURL: rentaruImageURL,
     likes: 1284,
     comments: 24,
     shares: 98,
@@ -108,8 +102,7 @@ final List<Post> posts = [
     user: onlineUsers[3],
     caption: "check out my new boyfriend",
     timeAgo: "58m",
-    imageURL:
-        "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg",
+    imageURL: rentaruImageURL,
     likes: 1284,
     comments: 24,
     shares: 98,
@@ -118,8 +111,7 @@ final List<Post> posts = [
     user: onlineUsers[4],
     caption: "check out my new boyfriend",
     timeAgo: "58m",
-    imageURL:
-        "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg",
+    imageURL: rentaruImageURL,
     likes: 1284,
     comments: 24,
     shares: 98,
@@ -128,8 +120,7 @@ final List<Post> posts = [
     user: onlineUsers[5],
     caption: "check out my new boyfriend",
     timeAgo: "58m",
-    imageURL:
-        "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg",
+    imageURL: rentaruImageURL,
     likes: 1284,
     comments: 24,
     shares: 98,

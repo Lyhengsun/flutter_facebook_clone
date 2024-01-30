@@ -14,8 +14,8 @@ class Stories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      color: Colors.orange,
-      padding: EdgeInsets.symmetric(vertical: 8),
+      color: Colors.white,
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: stories.length + 1,
@@ -88,7 +88,7 @@ class _StoryCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          width: 96,
+          width: 110,
           bottom: 0,
           child: Padding(
             padding: EdgeInsets.all(8),

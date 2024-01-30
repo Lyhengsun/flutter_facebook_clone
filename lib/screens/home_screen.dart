@@ -4,6 +4,7 @@ import 'package:flutter_facebook_clone/config/palette.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_facebook_clone/data/data.dart';
+import 'package:flutter_facebook_clone/models/models.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -60,7 +61,21 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverPadding(
               padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
               sliver: SliverToBoxAdapter(
-                child: Stories(currentUser: currentUser, stories: stories,),
+                child: Stories(
+                  currentUser: currentUser,
+                  stories: stories,
+                ),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                childCount: posts.length,
+                (context, index) {
+                  final Post post = posts[index];
+                  return PostContainer(
+                    post: post,
+                  );
+                },
               ),
             )
           ],

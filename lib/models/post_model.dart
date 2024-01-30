@@ -3,13 +3,13 @@ import 'package:flutter_facebook_clone/models/models.dart';
 class Post {
   final User user;
   final String caption;
-  final String timeAgo;
   final String? imageURL;
-  final int likes;
-  final int comments;
-  final int shares;
+  String timeAgo;
+  int likes;
+  int comments;
+  int shares;
 
-  const Post({
+  Post({
     required this.user,
     required this.caption,
     required this.timeAgo,

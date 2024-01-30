@@ -20,4 +20,14 @@ class Palette {
       Colors.black26,
     ],
   );
+
+  static const LinearGradient likeGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Colors.white,
+      facebookBlue,
+      facebookBlue,
+    ],
+  );
 }

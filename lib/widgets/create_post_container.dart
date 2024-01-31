@@ -1,5 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
@@ -11,12 +9,12 @@ class CreatePostContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(12, 8, 12, 0),
+      padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
       color: Colors.white,
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(bottom: 8),
+            padding: const EdgeInsets.only(bottom: 8),
             child: Row(
               children: [
                 ProfileAvatar(
@@ -30,8 +28,8 @@ class CreatePostContainer extends StatelessWidget {
                 // ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: TextField(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: const TextField(
                       decoration: InputDecoration.collapsed(
                         hintText: "What\'s on your mind today?",
                         hintStyle: TextStyle(color: Colors.grey),
@@ -42,31 +40,34 @@ class CreatePostContainer extends StatelessWidget {
               ],
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 1,
             height: 0,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ActionButton(
-                onPressed: () {},
-                icon: Icons.videocam,
-                label: Text("Live"),
-              ),
-              ActionButton(
-                onPressed: () {},
-                icon: Icons.photo_library,
-                label: Text("Photo"),
-                foregroundColor: Colors.green,
-              ),
-              ActionButton(
-                onPressed: () {},
-                icon: Icons.video_call,
-                label: Text("Room"),
-                foregroundColor: Colors.purple,
-              ),
-            ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ActionButton(
+                  onPressed: () {},
+                  icon: Icons.videocam,
+                  label: const Text("Live"),
+                ),
+                ActionButton(
+                  onPressed: () {},
+                  icon: Icons.photo_library,
+                  label: const Text("Photo"),
+                  foregroundColor: Colors.green,
+                ),
+                ActionButton(
+                  onPressed: () {},
+                  icon: Icons.video_call,
+                  label: const Text("Room"),
+                  foregroundColor: Colors.purple,
+                ),
+              ],
+            ),
           ),
         ],
       ),

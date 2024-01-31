@@ -16,7 +16,7 @@ class ProfileAvatar extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Colors.grey,
           backgroundImage: CachedNetworkImageProvider(imageUrl),
-          radius: 22,
+          radius: 20
         ),
         isActive
             ? Positioned(

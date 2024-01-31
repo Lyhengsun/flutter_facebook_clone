@@ -29,7 +29,7 @@ class Rooms extends StatelessWidget {
           }
           final User user = onlineUsers[index - 1];
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: 5),
+            margin: EdgeInsets.symmetric(horizontal: 6),
             child: ProfileAvatar(
               imageUrl: user.imageURL,
               isActive: user.isActive,

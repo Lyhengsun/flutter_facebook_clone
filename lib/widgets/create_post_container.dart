@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
@@ -19,7 +20,6 @@ class CreatePostContainer extends StatelessWidget {
               children: [
                 ProfileAvatar(
                   imageUrl: currentUser.imageURL,
-                  isActive: true,
                 ),
                 // CircleAvatar(
                 //   backgroundColor: Colors.grey,
@@ -32,40 +32,16 @@ class CreatePostContainer extends StatelessWidget {
                     child: const TextField(
                       decoration: InputDecoration.collapsed(
                         hintText: "What\'s on your mind today?",
-                        hintStyle: TextStyle(color: Colors.grey),
+                        hintStyle: TextStyle(color: Colors.black87, fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
-          const Divider(
-            thickness: 1,
-            height: 0,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ActionButton(
+                IconButton(
+                  icon: Icon(Icons.photo_library, ),
                   onPressed: () {},
-                  icon: Icons.videocam,
-                  label: const Text("Live"),
-                ),
-                ActionButton(
-                  onPressed: () {},
-                  icon: Icons.photo_library,
-                  label: const Text("Photo"),
-                  foregroundColor: Colors.green,
-                ),
-                ActionButton(
-                  onPressed: () {},
-                  icon: Icons.video_call,
-                  label: const Text("Room"),
-                  foregroundColor: Colors.purple,
-                ),
+                  color: Colors.lightGreen,
+                )
               ],
             ),
           ),

@@ -20,7 +20,7 @@ class _PostContainerState extends State<PostContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(top: 6),
       padding: EdgeInsets.only(top: 5),
       color: Colors.white,
       child: Column(
@@ -80,6 +80,11 @@ class _PostHeader extends StatelessWidget {
       children: [
         ProfileAvatar(
           imageUrl: post.user.imageURL,
+          isActive: post.user.isActive,
+          addStory: post.user.addStory,
+          viewedStory: post.user.viewedStory,
+          backgroundColor: Colors.white,
+          unviewedStory: Colors.grey,
         ),
         const SizedBox(
           width: 8,

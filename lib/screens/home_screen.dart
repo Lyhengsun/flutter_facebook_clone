@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Container(
-          color: const Color(0xFFF4F4F4),
+          color: Colors.grey.shade400,
           child: CustomScrollView(
             controller: widget.scrollController,
             slivers: [
@@ -57,15 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SliverPadding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
-                sliver: SliverToBoxAdapter(
-                  child: Rooms(
-                    onlineUsers: onlineUsers,
-                  ),
-                ),
-              ),
-              SliverPadding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
+                padding: const EdgeInsets.fromLTRB(0, 6, 0, 0),
                 sliver: SliverToBoxAdapter(
                   child: Stories(
                     currentUser: currentUser,

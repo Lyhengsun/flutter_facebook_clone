@@ -12,37 +12,48 @@ final List<User> onlineUsers = [
     name: "Hanazono Hakari",
     imageURL: "https://static.wikia.nocookie.net/100kanojo/images/0/0a/HakariAnimeInfobox.png/revision/latest?cb=20240118051455",
     isActive: true,
+    addStory: true,
+    viewedStory: true,
   ),
   User(
     name: "Inda Karane",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/6/69/KaraneAnimeInfobox.png/revision/latest?cb=20240118051853",
     isActive: true,
+    addStory: true,
+    viewedStory: true,
   ),
   User(
     name: "Yoshimoto Shizuka",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/1/16/ShizukaAnimeInfobox.png/revision/latest?cb=20240118071619",
     isActive: true,
+    addStory: true,
+    viewedStory: false,
   ),
   User(
     name: "Eiai Nano",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/f/fa/NanoAnimeInfobox.png/revision/latest?cb=20240118071204",
     isActive: true,
+    addStory: true,
+    viewedStory: true,
   ),
   User(
     name: "Yakuzen Kusuri",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/f/fb/KusuriAnimeInfobox.png/revision/latest?cb=20240118080342",
     isActive: false,
+    addStory: true,
+    viewedStory: true,
   ),
   User(
     name: "Hanazono Hahari",
     imageURL:
         "https://static.wikia.nocookie.net/100kanojo/images/3/30/HahariAnimeInfobox.png/revision/latest?cb=20240118082226",
     isActive: false,
-
+    addStory: true,
+    viewedStory: false,
   )
 ];
 

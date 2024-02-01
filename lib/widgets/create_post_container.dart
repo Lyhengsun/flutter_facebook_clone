@@ -32,7 +32,7 @@ class CreatePostContainer extends StatelessWidget {
                     child: const TextField(
                       decoration: InputDecoration.collapsed(
                         hintText: "What\'s on your mind today?",
-                        hintStyle: TextStyle(color: Colors.black87, fontWeight: FontWeight.w400),
+                        hintStyle: TextStyle(color: Colors.black87, fontWeight: FontWeight.w400, fontSize: 12),
                       ),
                     ),
                   ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_clone/config/palette.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 
 class FriendScreen extends StatefulWidget {
@@ -27,7 +26,7 @@ class _FriendScreenState extends State<FriendScreen> {
               ),
               SliverToBoxAdapter(
                 child: FriendsFilterContainer(),
-              )
+              ),
             ],
           ),
         ),
@@ -40,7 +39,7 @@ class _FriendScreenState extends State<FriendScreen> {
               "Friends",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 25,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),

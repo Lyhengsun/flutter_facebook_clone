@@ -37,7 +37,7 @@ class _PostContainerState extends State<PostContainer> {
                 SizedBox(
                   height: 4,
                 ),
-                Text(widget.post.caption),
+                Text(widget.post.caption, style: TextStyle(fontSize: 12),),
               ],
             ),
           ),
@@ -95,14 +95,14 @@ class _PostHeader extends StatelessWidget {
             children: [
               Text(
                 post.user.name,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
                     "${post.timeAgo} • ",
-                    style: TextStyle(fontSize: 12, color: Colors.black54),
+                    style: TextStyle(fontSize: 10, color: Colors.black54),
                   ),
                   Icon(
                     Icons.public,
@@ -147,6 +147,8 @@ class _PostStatsState extends State<_PostStats> {
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = 12;
+
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
       child: Row(
@@ -167,6 +169,7 @@ class _PostStatsState extends State<_PostStats> {
           Text(
             context.watch<PostNotifier>().likes.toString(),
             style: TextStyle(
+              fontSize: fontSize,
               color: Colors.black54,
               fontWeight: FontWeight.w500,
             ),
@@ -175,6 +178,7 @@ class _PostStatsState extends State<_PostStats> {
           Text(
             "${context.watch<PostNotifier>().comments} comments",
             style: TextStyle(
+              fontSize: fontSize,
               color: Colors.black54,
               fontWeight: FontWeight.w500,
             ),
@@ -185,6 +189,7 @@ class _PostStatsState extends State<_PostStats> {
           Text(
             "${context.watch<PostNotifier>().shares} shares",
             style: TextStyle(
+              fontSize: fontSize,
               color: Colors.black54,
               fontWeight: FontWeight.w500,
             ),

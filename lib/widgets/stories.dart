@@ -14,10 +14,11 @@ class Stories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 210,
+      height: 200,
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: 13),
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: stories.length + 1,
         itemBuilder: (BuildContext context, int index) {
@@ -55,11 +56,14 @@ class _CreateStoryCardState extends State<_CreateStoryCard> {
 
   @override
   Widget build(BuildContext context) {
+    double widgetBorderRadius = 10;
+    double widgetWidth = 100;
+
     return Transform.scale(
       scale: storyIsTapped ? 0.95 : 1,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
+          borderRadius: BorderRadius.all(Radius.circular(widgetBorderRadius)),
           border: Border.all(
             color: Colors.black54,
             width: 0.5,
@@ -71,12 +75,12 @@ class _CreateStoryCardState extends State<_CreateStoryCard> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    topRight: Radius.circular(12),
+                    topLeft: Radius.circular(widgetBorderRadius),
+                    topRight: Radius.circular(widgetBorderRadius),
                   ),
                   child: CachedNetworkImage(
                     imageUrl: widget.currentUser.imageURL,
-                    width: 105,
+                    width: widgetWidth,
                     height: 120,
                     fit: BoxFit.cover,
                   ),
@@ -85,19 +89,19 @@ class _CreateStoryCardState extends State<_CreateStoryCard> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12),
+                        bottomLeft: Radius.circular(widgetBorderRadius),
+                        bottomRight: Radius.circular(widgetBorderRadius),
                       ),
                       color: Color(0xFFF7F8FA),
                     ),
-                    width: 105,
+                    width: widgetWidth,
                   ),
                 )
               ],
             ),
             Positioned(
               top: 100,
-              left: 32.5,
+              left: widgetWidth/2 - 17.5,
               child: Container(
                 width: 35,
                 height: 35,
@@ -118,13 +122,14 @@ class _CreateStoryCardState extends State<_CreateStoryCard> {
                 ),
               ),
             ),
-            const Positioned(
-              width: 105,
+            Positioned(
+              width: widgetWidth,
               bottom: 5,
-              child: Text(
+              child: const Text(
                 "Create\nstory",
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                    fontSize: 10,
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
                     height: 1.2),
@@ -148,10 +153,10 @@ class _CreateStoryCardState extends State<_CreateStoryCard> {
                   color: storyIsTapped
                       ? Colors.grey.withOpacity(0.2)
                       : Colors.transparent,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(widgetBorderRadius),
                 ),
                 height: double.infinity,
-                width: 105,
+                width: widgetWidth,
               ),
             ),
           ],
@@ -179,11 +184,14 @@ class _StoryCardState extends State<_StoryCard> {
 
   @override
   Widget build(BuildContext context) {
+    double widgetBorderRadius = 10;
+    double widgetWidth = 100;
+
     return Transform.scale(
       scale: storyIsTapped ? 0.95 : 1.0,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(12)),
+            borderRadius: BorderRadius.all(Radius.circular(widgetBorderRadius)),
             border: Border.all(
               color: Colors.black54,
               width: 0.5,
@@ -191,20 +199,20 @@ class _StoryCardState extends State<_StoryCard> {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(widgetBorderRadius),
               child: CachedNetworkImage(
                 imageUrl: widget.story.imageURL,
                 height: double.infinity,
-                width: 105,
+                width: widgetWidth,
                 fit: BoxFit.cover,
               ),
             ),
             Container(
               height: double.infinity,
-              width: 105,
+              width: widgetWidth,
               decoration: BoxDecoration(
                 gradient: Palette.storyGradient,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(widgetBorderRadius),
               ),
             ),
             Positioned(
@@ -219,7 +227,7 @@ class _StoryCardState extends State<_StoryCard> {
               ),
             ),
             Positioned(
-              width: 105,
+              width: widgetWidth,
               bottom: 0,
               child: Padding(
                 padding: EdgeInsets.all(8),
@@ -231,7 +239,7 @@ class _StoryCardState extends State<_StoryCard> {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
-                    fontSize: 15,
+                    fontSize: 10,
                     height: 1.2,
                   ),
                 ),
@@ -255,10 +263,10 @@ class _StoryCardState extends State<_StoryCard> {
                   color: storyIsTapped
                       ? Colors.grey.withOpacity(0.2)
                       : Colors.transparent,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(widgetBorderRadius),
                 ),
                 height: double.infinity,
-                width: 105,
+                width: widgetWidth,
               ),
             ),
           ],

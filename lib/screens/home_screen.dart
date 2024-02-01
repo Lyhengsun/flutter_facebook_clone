@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
               "facebook",
               style: TextStyle(
                 color: Palette.facebookBlue,
-                fontSize: 25,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),

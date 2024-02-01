@@ -47,9 +47,7 @@ class _FrontScreenState extends State<FrontScreen> {
         Container(
           color: Colors.blue,
         ),
-        Container(
-          color: Colors.green,
-        ),
+        FriendScreen(),
         Container(
           color: Colors.yellow,
         ),

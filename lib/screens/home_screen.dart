@@ -90,20 +90,20 @@ class _HomeScreenState extends State<HomeScreen> {
               "facebook",
               style: TextStyle(
                 color: Palette.facebookBlue,
-                fontSize: 28,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
             actions: [
               CircleButton(
                 icon: Icons.search,
-                iconSize: 28,
+                iconSize: 25,
                 onPressed: () {},
                 margin: const EdgeInsets.only(right: 10),
               ),
               CircleButton(
                 icon: MdiIcons.facebookMessenger,
-                iconSize: 23,
+                iconSize: 21,
                 onPressed: () {},
               ),
             ],

@@ -9,6 +9,8 @@ class ProfileAvatar extends StatelessWidget {
   final bool isActive;
   final bool addStory;
   final bool viewedStory;
+  final double size;
+  final double onlineDotSize;
 
   const ProfileAvatar({
     super.key,
@@ -18,13 +20,15 @@ class ProfileAvatar extends StatelessWidget {
     this.isActive = false,
     this.addStory = false,
     this.viewedStory = false,
+    this.size = 40,
+    this.onlineDotSize = 10,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 40,
-      height: 40,
+      width: size,
+      height: size,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: backgroundColor ?? Colors.black45.withOpacity(0.2),
@@ -37,19 +41,19 @@ class ProfileAvatar extends StatelessWidget {
           CircleAvatar(
               backgroundColor: Colors.grey,
               backgroundImage: CachedNetworkImageProvider(imageUrl),
-              radius: addStory ? 16 : 20),
+              radius: addStory ? (size/2) * 0.8 : size/2),
           isActive
               ? Positioned(
                   bottom: 0,
                   right: 0,
                   child: Container(
-                    width: 10,
-                    height: 10,
+                    width: onlineDotSize,
+                    height: onlineDotSize,
                     decoration: BoxDecoration(
                       color: Palette.online,
                       shape: BoxShape.circle,
                       border: Border.all(
-                        width: 1,
+                        width: onlineDotSize/10,
                         color: Colors.white,
                       ),
                     ),

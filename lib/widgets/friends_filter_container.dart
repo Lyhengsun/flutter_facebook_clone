@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_clone/widgets/widgets.dart';
 
 class FriendsFilterContainer extends StatelessWidget {
   const FriendsFilterContainer({super.key});
@@ -41,13 +40,6 @@ class FriendsFilterContainer extends StatelessWidget {
                 onPressed: () {},
               ),
             ],
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Divider(
-            height: 0,
-            thickness: 1,
           ),
         ),
       ],

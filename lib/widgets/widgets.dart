@@ -6,3 +6,4 @@ export 'profile_avatar.dart';
 export 'stories.dart';
 export 'post_container.dart';
 export 'friends_filter_container.dart';
+export 'friend_request_container.dart';

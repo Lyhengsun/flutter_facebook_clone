@@ -221,3 +221,43 @@ List<FriendRequest> friendRequests = [
     requestDuration: Duration(days: 31),
   ),
 ];
+
+List<FriendRequest> friendSuggestions = [
+  FriendRequest(
+    user: User(
+      name: "Torotoro Kishika",
+      imageURL:
+          "https://static.wikia.nocookie.net/100kanojo/images/9/9a/HeadshotKishika.png/revision/latest?cb=20230917143822",
+    ),
+    mutualFriendsAmount: 6,
+  ),
+  FriendRequest(
+    user: User(
+      name: "Kedarui Aashii",
+      imageURL:
+          "https://static.wikia.nocookie.net/100kanojo/images/b/b2/HeadshotAhko.png/revision/latest?cb=20230917143901",
+    ),
+    mutualFriendsAmount: 6,
+  ),
+  FriendRequest(
+    user: User(
+        name: "Nakaji Uto",
+        imageURL:
+            "https://static.wikia.nocookie.net/100kanojo/images/e/ef/HeadshotUto.png/revision/latest?cb=20230917143941"),
+    mutualFriendsAmount: 6,
+  ),
+  FriendRequest(
+    user: User(
+        name: "Meido Mai",
+        imageURL:
+            "https://static.wikia.nocookie.net/100kanojo/images/4/4f/HeadshotMai.png/revision/latest?cb=20230917144016"),
+    mutualFriendsAmount: 6,
+  ),
+  FriendRequest(
+    user: User(
+        name: "Bonnouji Momoha",
+        imageURL:
+            "https://static.wikia.nocookie.net/100kanojo/images/9/9c/BonnoujiMomoha.png/revision/latest?cb=20240103155122"),
+    mutualFriendsAmount: 6,
+  ),
+];

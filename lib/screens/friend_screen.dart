@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/config/palette.dart';
+import 'package:flutter_facebook_clone/screens/friend_seeall_screen.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 import 'package:flutter_facebook_clone/data/data.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
@@ -56,6 +57,18 @@ class _FriendScreenState extends State<FriendScreen> {
               SliverToBoxAdapter(
                 child: FriendSuggestionHeader(),
               ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  childCount: friendSuggestions.length,
+                  (context, index) {
+                    final FriendRequest friendRequest =
+                        friendSuggestions[index];
+                    return FriendSuggestionContainer(
+                      friendRequest: friendRequest,
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),
@@ -104,18 +117,23 @@ class _FriendScreenState extends State<FriendScreen> {
       width: double.maxFinite,
       color: Colors.white,
       // height: 20,
-      child: Container(
-        width: double.maxFinite,
-        padding: EdgeInsets.all(6),
-        decoration: BoxDecoration(
-            color: Colors.grey.shade300,
-            borderRadius: BorderRadius.all(Radius.circular(5))),
-        child: Text(
-          "See all",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 12,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, "seeAllPage");
+          },
+        child: Container(
+          width: double.maxFinite,
+          padding: EdgeInsets.all(6),
+          decoration: BoxDecoration(
+              color: Colors.grey.shade300,
+              borderRadius: BorderRadius.all(Radius.circular(5))),
+          child: Text(
+            "See all",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+            ),
           ),
         ),
       ),
@@ -140,9 +158,14 @@ class FriendRequestHeader extends StatelessWidget {
           Spacer(),
           GestureDetector(
             onTap: () {},
-            child: Text(
-              "See all",
-              style: TextStyle(color: Palette.facebookBlue),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, "seeAllPage");
+              },
+              child: Text(
+                "See all",
+                style: TextStyle(color: Palette.facebookBlue),
+              ),
             ),
           )
         ],

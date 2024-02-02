@@ -132,7 +132,7 @@ class FriendRequestContainer extends StatelessWidget {
           label: "Confirm",
           backgroundColor: Palette.facebookBlue,
           foregroundColor: Colors.white,
-          onTap: () {},
+          onTap: () { print("Confirmed"); },
         ),
         SizedBox(
           width: 4,
@@ -167,7 +167,7 @@ class FriendRequestContainer extends StatelessWidget {
   }
 }
 
-class FriendReqButton extends StatelessWidget {
+class FriendReqButton extends StatefulWidget {
   final String label;
   final Color backgroundColor;
   final Color foregroundColor;
@@ -183,23 +183,41 @@ class FriendReqButton extends StatelessWidget {
   });
 
   @override
+  State<FriendReqButton> createState() => _FriendReqButtonState();
+}
+
+class _FriendReqButtonState extends State<FriendReqButton> {
+  bool isTap = false;
+
+  @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          padding: EdgeInsets.all(6),
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: foregroundColor,
-              fontWeight: FontWeight.w500,
-              fontSize: 12,
+        onTapDown: (_) {
+          widget.onTap();
+          isTap = true;
+          setState(() {});
+        },
+        onTapUp: (_) {
+          isTap = false;
+          setState(() {});
+        },
+        child: Transform.scale(
+          scale: isTap ? 0.95 : 1,
+          child: Container(
+            padding: EdgeInsets.all(6),
+            decoration: BoxDecoration(
+              color: widget.backgroundColor,
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            ),
+            child: Text(
+              widget.label,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: widget.foregroundColor,
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
             ),
           ),
         ),

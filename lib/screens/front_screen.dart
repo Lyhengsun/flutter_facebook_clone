@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_facebook_clone/screens/friend_seeall_screen.dart';
 import 'package:flutter_facebook_clone/screens/screens.dart';
+import 'package:flutter_facebook_clone/widgets/widgets.dart';
 
 class FrontScreen extends StatefulWidget {
   const FrontScreen({super.key});
@@ -47,7 +49,19 @@ class _FrontScreenState extends State<FrontScreen> {
         Container(
           color: Colors.blue,
         ),
-        FriendScreen(),
+        Navigator(
+          onGenerateRoute: (settings) {
+            Widget page = FriendScreen();
+            if (settings.name == "seeAllPage") page = FriendSeeAllScreen();
+            // return MaterialPageRoute(
+            //   builder: (_) => page,
+            // );
+            return CustomPageRoute(child: page);
+          },
+        )
+
+        //FriendScreen()
+        ,
         Container(
           color: Colors.yellow,
         ),
@@ -62,9 +76,12 @@ class _FrontScreenState extends State<FrontScreen> {
   }
 
   bool showAppBar = true;
-  
+
   Icon showIcon(IconData icon) {
-    return Icon(icon, size: showAppBar ? 24: 0,);
+    return Icon(
+      icon,
+      size: showAppBar ? 24 : 0,
+    );
   }
 
   String showLabel(String label) {
@@ -92,24 +109,17 @@ class _FrontScreenState extends State<FrontScreen> {
           });
         },
         items: [
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home"),
+              icon: Icon(Icons.video_stable), label: "Video"),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.video_stable),
-              label: "Video"),
+              icon: Icon(Icons.people), label: "Friends"),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.people),
-              label: "Friends"),
+              icon: Icon(Icons.shop), label: "Marketplace"),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.shop),
-              label: "Marketplace"),
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: "Notifications"),
+              icon: Icon(Icons.notifications), label: "Notifications"),
           BottomNavigationBarItem(
-              icon: showIcon(Icons.menu),
-              label: showLabel("Menu"))
+              icon: showIcon(Icons.menu), label: showLabel("Menu"))
         ],
       ),
     );

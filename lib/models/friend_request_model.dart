@@ -8,6 +8,6 @@ class FriendRequest {
   FriendRequest({
     required this.user,
     required this.mutualFriendsAmount,
-    required this.requestDuration,
+    this.requestDuration = const Duration(),
   });
 }

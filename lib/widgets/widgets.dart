@@ -8,3 +8,4 @@ export 'post_container.dart';
 export 'friends_filter_container.dart';
 export 'friend_request_container.dart';
 export 'friend_suggestion_container.dart';
+export 'custom_page_route.dart';

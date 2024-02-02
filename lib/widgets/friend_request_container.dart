@@ -31,13 +31,13 @@ class FriendRequestContainer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildFriendRequestHeaderWidget(),
+                  buildFriendRequestHeaderWidget(),
                   SizedBox(
                     height: 5,
                   ),
-                  _buildMutualFriendsWidget(),
+                  buildMutualFriendsWidget(),
                   Spacer(),
-                  _buildFriendReqButtons(),
+                  buildFriendReqButtons(),
                 ],
               ),
             ),
@@ -47,7 +47,8 @@ class FriendRequestContainer extends StatelessWidget {
     );
   }
 
-  Widget _buildFriendRequestHeaderWidget() {
+  @protected
+  Widget buildFriendRequestHeaderWidget() {
     return Container(
       child: Row(
         children: [
@@ -75,7 +76,8 @@ class FriendRequestContainer extends StatelessWidget {
     );
   }
 
-  Widget _buildMutualFriendsWidget() {
+  @protected
+  Widget buildMutualFriendsWidget() {
     return Row(
       children: [
         Container(
@@ -122,53 +124,24 @@ class FriendRequestContainer extends StatelessWidget {
     );
   }
 
-  Widget _buildFriendReqButtons() {
+  @protected
+  Widget buildFriendReqButtons() {
     return Row(
       children: [
-        Expanded(
-          child: GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: Palette.facebookBlue,
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-              ),
-              child: Text(
-                "Confirm",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                ),
-              ),
-            ),
-          ),
+        FriendReqButton(
+          label: "Confirm",
+          backgroundColor: Palette.facebookBlue,
+          foregroundColor: Colors.white,
+          onTap: () {},
         ),
         SizedBox(
           width: 4,
         ),
-        Expanded(
-          child: GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-              ),
-              child: Text(
-                "Delete",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                ),
-              ),
-            ),
-          ),
+        FriendReqButton(
+          label: "Delete",
+          backgroundColor: Colors.grey.shade300,
+          foregroundColor: Colors.black,
+          onTap: () {},
         ),
       ],
     );
@@ -191,5 +164,46 @@ class FriendRequestContainer extends StatelessWidget {
       return "${(duration.inDays / 7).toInt()}w";
     }
     return "${(duration.inDays / 365).toInt()}y";
+  }
+}
+
+class FriendReqButton extends StatelessWidget {
+  final String label;
+  final Color backgroundColor;
+  final Color foregroundColor;
+  final VoidCallback onTap;
+
+  const FriendReqButton({
+    super.key,
+    required,
+    required this.label,
+    required this.backgroundColor,
+    required this.foregroundColor,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+          ),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: foregroundColor,
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

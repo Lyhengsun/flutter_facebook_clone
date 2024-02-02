@@ -39,6 +39,7 @@ class FriendsFilterContainer extends StatelessWidget {
                 ),
                 onPressed: () {},
               ),
+              SizedBox(width: 20,)
             ],
           ),
         ),

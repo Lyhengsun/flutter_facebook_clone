@@ -18,7 +18,7 @@ class _FriendScreenState extends State<FriendScreen> {
     return Stack(
       children: [
         Container(
-          color: Colors.grey.shade400,
+          color: Colors.white,
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
@@ -77,28 +77,16 @@ class _FriendScreenState extends State<FriendScreen> {
           ),
         ),
         Container(
-          height: WidgetConfig.appBarHeight,
-          child: AppBar(
-            backgroundColor: Colors.white,
-            scrolledUnderElevation: 0,
-            title: const Text(
-              "Friends",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            actions: [
-              CircleButton(
-                icon: Icons.search,
-                iconSize: 25,
-                onPressed: () {},
-                margin: const EdgeInsets.only(right: 10),
-              ),
-            ],
-          ),
-        ),
+            height: WidgetConfig.appBarHeight,
+            child: FacebookScreenAppBar(
+              title: "Friends",
+              actions: [
+                CircleButton(
+                  icon: Icons.search,
+                  onPressed: () {},
+                )
+              ],
+            )),
       ],
     );
   }
@@ -124,7 +112,7 @@ class _FriendScreenState extends State<FriendScreen> {
       child: GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, "seeAllPage");
-          },
+        },
         child: Container(
           width: double.maxFinite,
           padding: const EdgeInsets.all(6),

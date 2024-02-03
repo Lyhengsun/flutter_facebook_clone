@@ -84,23 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
           curve: Curves.easeInOutSine,
           duration: const Duration(milliseconds: 150),
           height: showAppBar ? WidgetConfig.appBarHeight : 0,
-          child: AppBar(
-            backgroundColor: Colors.white,
-            scrolledUnderElevation: 0,
-            title: const Text(
-              "facebook",
-              style: TextStyle(
-                color: Palette.facebookBlue,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          child: FacebookScreenAppBar(
+            title: "facebook",
+            titleColor: Palette.facebookBlue,
             actions: [
               CircleButton(
                 icon: Icons.search,
-                iconSize: 25,
                 onPressed: () {},
-                margin: const EdgeInsets.only(right: 10),
               ),
               CircleButton(
                 icon: MdiIcons.facebookMessenger,

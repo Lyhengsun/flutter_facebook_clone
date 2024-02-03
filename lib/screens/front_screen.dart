@@ -64,16 +64,11 @@ class _FrontScreenState extends State<FrontScreen> {
             // );
             return CustomPageRoute(child: page);
           },
-        )
-
-        //FriendScreen()
-        ,
+        ),
         Container(
           color: Colors.yellow,
         ),
-        Container(
-          color: Colors.purple,
-        ),
+        NotificationScreen(),
         Container(
           color: Colors.cyan,
         )

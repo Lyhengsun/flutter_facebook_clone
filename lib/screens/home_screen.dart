@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_facebook_clone/config/palette.dart';
+import 'package:flutter_facebook_clone/config/widget_config.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_facebook_clone/data/data.dart';
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             slivers: [
               SliverToBoxAdapter(
                 child: Container(
-                  height: 75,
+                  height: WidgetConfig.appBarHeight,
                   width: double.maxFinite,
                   color: Colors.white,
                 ),
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
         AnimatedContainer(
           curve: Curves.easeInOutSine,
           duration: const Duration(milliseconds: 150),
-          height: showAppBar ? 75 : 0,
+          height: showAppBar ? WidgetConfig.appBarHeight : 0,
           child: AppBar(
             backgroundColor: Colors.white,
             scrolledUnderElevation: 0,

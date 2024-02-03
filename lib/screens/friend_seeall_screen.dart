@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/config/palette.dart';
+import 'package:flutter_facebook_clone/config/widget_config.dart';
 import 'package:flutter_facebook_clone/data/data.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
@@ -17,7 +18,7 @@ class FriendSeeAllScreen extends StatelessWidget {
               slivers: [
                 SliverToBoxAdapter(
                   child: Container(
-                    height: 75,
+                    height: WidgetConfig.appBarHeight,
                     width: double.maxFinite,
                     color: Colors.white,
                   ),
@@ -43,7 +44,7 @@ class FriendSeeAllScreen extends StatelessWidget {
             ),
           ),
           Container(
-            height: 75,
+            height: WidgetConfig.appBarHeight,
             child: AppBar(
               title: Text(
                 "Friend requests",

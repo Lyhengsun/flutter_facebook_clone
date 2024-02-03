@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_facebook_clone/config/widget_config.dart';
 import 'package:flutter_facebook_clone/screens/friend_seeall_screen.dart';
 import 'package:flutter_facebook_clone/screens/screens.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
@@ -34,6 +35,11 @@ class _FrontScreenState extends State<FrontScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: WidgetConfig.statusBarHeight,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+      ),
       body: _buildBody(),
       bottomNavigationBar: _buildBottom(),
     );
@@ -93,7 +99,7 @@ class _FrontScreenState extends State<FrontScreen> {
 
     return AnimatedContainer(
       curve: Curves.easeInOutSine,
-      height: showAppBar ? 60 : 0,
+      height: showAppBar ? WidgetConfig.bottomNavigationBarHeight : 0,
       duration: const Duration(milliseconds: 150),
       child: BottomNavigationBar(
         currentIndex: _currentIndex,

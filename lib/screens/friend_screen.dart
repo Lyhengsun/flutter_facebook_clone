@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/config/palette.dart';
-import 'package:flutter_facebook_clone/screens/friend_seeall_screen.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 import 'package:flutter_facebook_clone/data/data.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
@@ -35,12 +34,16 @@ class _FriendScreenState extends State<FriendScreen> {
                 child: _divider(),
               ),
               const SliverToBoxAdapter(
-                child: FriendRequestHeader(),
+                child: _friendRequestHeader(),
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                   childCount: friendRequests.length,
+                  // childCount: 5,
                   (context, index) {
+                    // if (index > friendRequests.length-1) {
+                    //   return SizedBox.shrink();
+                    // }
                     final FriendRequest friendRequest = friendRequests[index];
                     return FriendRequestContainer(
                       friendRequest: friendRequest,
@@ -54,8 +57,8 @@ class _FriendScreenState extends State<FriendScreen> {
               SliverToBoxAdapter(
                 child: _divider(),
               ),
-              SliverToBoxAdapter(
-                child: FriendSuggestionHeader(),
+              const SliverToBoxAdapter(
+                child: _friendSuggestionHeader(),
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
@@ -102,7 +105,7 @@ class _FriendScreenState extends State<FriendScreen> {
   Widget _divider() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Divider(
         height: 1,
         thickness: 1,
@@ -113,7 +116,7 @@ class _FriendScreenState extends State<FriendScreen> {
 
   Widget _seeAllButton() {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       width: double.maxFinite,
       color: Colors.white,
       // height: 20,
@@ -123,11 +126,11 @@ class _FriendScreenState extends State<FriendScreen> {
           },
         child: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
               color: Colors.grey.shade300,
-              borderRadius: BorderRadius.all(Radius.circular(5))),
-          child: Text(
+              borderRadius: const BorderRadius.all(Radius.circular(5))),
+          child: const Text(
             "See all",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -141,28 +144,28 @@ class _FriendScreenState extends State<FriendScreen> {
   }
 }
 
-class FriendRequestHeader extends StatelessWidget {
-  const FriendRequestHeader({super.key});
+class _friendRequestHeader extends StatelessWidget {
+  const _friendRequestHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.fromLTRB(15, 15, 15, 10),
+      padding: const EdgeInsets.fromLTRB(15, 15, 15, 10),
       child: Row(
         children: [
-          Text(
+          const Text(
             "Friend requests",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
-          Spacer(),
+          const Spacer(),
           GestureDetector(
             onTap: () {},
             child: GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, "seeAllPage");
               },
-              child: Text(
+              child: const Text(
                 "See all",
                 style: TextStyle(color: Palette.facebookBlue),
               ),
@@ -174,15 +177,15 @@ class FriendRequestHeader extends StatelessWidget {
   }
 }
 
-class FriendSuggestionHeader extends StatelessWidget {
-  const FriendSuggestionHeader({super.key});
+class _friendSuggestionHeader extends StatelessWidget {
+  const _friendSuggestionHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.fromLTRB(15, 15, 15, 10),
-      child: Row(
+      padding: const EdgeInsets.fromLTRB(15, 15, 15, 10),
+      child: const Row(
         children: [
           Text(
             "People you may know",

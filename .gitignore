@@ -43,5 +43,5 @@ app.*.map.json
 /android/app/release
 
 # Sublime Text Related
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace

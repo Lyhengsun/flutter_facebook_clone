@@ -100,8 +100,9 @@ class _PostHeader extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  FacebookDurationLabel(duration: post.timeAgo,),
                   Text(
-                    "${post.timeAgo} • ",
+                    " • ",
                     style: TextStyle(fontSize: 10, color: Colors.black54),
                   ),
                   Icon(

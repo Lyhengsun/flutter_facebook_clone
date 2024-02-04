@@ -63,14 +63,7 @@ class FriendRequestContainer extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Text(
-            _getDurationString(friendRequest.requestDuration),
-            style: TextStyle(
-              fontSize: 10,
-              color: Colors.black54,
-              height: 0,
-            ),
-          ),
+          FacebookDurationLabel(duration: friendRequest.requestDuration),
         ],
       ),
     );
@@ -145,25 +138,6 @@ class FriendRequestContainer extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  String _getDurationString(Duration duration) {
-    if (duration.inSeconds < 60) {
-      return "${(duration.inSeconds).toInt()}s";
-    }
-    if (duration.inMinutes < 60) {
-      return "${(duration.inMinutes).toInt()}m";
-    }
-    if (duration.inHours < 24) {
-      return "${(duration.inHours).toInt()}h";
-    }
-    if (duration.inDays < 7) {
-      return "${(duration.inDays).toInt()}d";
-    }
-    if (duration.inDays < 365) {
-      return "${(duration.inDays / 7).toInt()}w";
-    }
-    return "${(duration.inDays / 365).toInt()}y";
   }
 }
 

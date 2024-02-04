@@ -4,7 +4,7 @@ class Post {
   final User user;
   final String caption;
   final String? imageURL;
-  String timeAgo;
+  final Duration timeAgo;
   int likes;
   int comments;
   int shares;

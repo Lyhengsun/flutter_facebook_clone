@@ -12,3 +12,4 @@ export 'friend_suggestion_container.dart';
 export 'custom_page_route.dart';
 export 'notification_container.dart';
 export 'facebook_duration_label.dart';
+export 'facebook_wide_labelbutton_container.dart';

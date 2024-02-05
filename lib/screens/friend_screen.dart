@@ -15,79 +15,91 @@ class FriendScreen extends StatefulWidget {
 class _FriendScreenState extends State<FriendScreen> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          color: Colors.white,
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Container(
-                  height: WidgetConfig.appBarHeight,
-                  width: double.maxFinite,
-                  color: Colors.white,
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: WidgetConfig.statusBarHeight,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+      ),
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.white,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Container(
+                    height: WidgetConfig.appBarHeight,
+                    width: double.maxFinite,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              const SliverToBoxAdapter(
-                child: FriendsFilterContainer(),
-              ),
-              SliverToBoxAdapter(
-                child: _divider(),
-              ),
-              const SliverToBoxAdapter(
-                child: _friendRequestHeader(),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: friendRequests.length,
-                  // childCount: 5,
-                  (context, index) {
-                    // if (index > friendRequests.length-1) {
-                    //   return SizedBox.shrink();
-                    // }
-                    final FriendRequest friendRequest = friendRequests[index];
-                    return FriendRequestContainer(
-                      friendRequest: friendRequest,
-                    );
-                  },
+                const SliverToBoxAdapter(
+                  child: FriendsFilterContainer(),
                 ),
-              ),
-              SliverToBoxAdapter(
-                child: _seeAllButton(),
-              ),
-              SliverToBoxAdapter(
-                child: _divider(),
-              ),
-              const SliverToBoxAdapter(
-                child: _friendSuggestionHeader(),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: friendSuggestions.length,
-                  (context, index) {
-                    final FriendRequest friendRequest =
-                        friendSuggestions[index];
-                    return FriendSuggestionContainer(
-                      friendRequest: friendRequest,
-                    );
-                  },
+                SliverToBoxAdapter(
+                  child: _divider(),
                 ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-            height: WidgetConfig.appBarHeight,
-            child: FacebookScreenAppBar(
-              title: "Friends",
-              actions: [
-                CircleButton(
-                  icon: Icons.search,
-                  onPressed: () {},
-                )
+                const SliverToBoxAdapter(
+                  child: _friendRequestHeader(),
+                ),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: friendRequests.length,
+                    // childCount: 5,
+                    (context, index) {
+                      // if (index > friendRequests.length-1) {
+                      //   return SizedBox.shrink();
+                      // }
+                      final FriendRequest friendRequest = friendRequests[index];
+                      return FriendRequestContainer(
+                        friendRequest: friendRequest,
+                      );
+                    },
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: FacebookWideLabelButtonContainer(
+                    label: "See all",
+                    onTap: () {
+                      Navigator.pushNamed(context, "seeAllPage");
+                    },
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: _divider(),
+                ),
+                const SliverToBoxAdapter(
+                  child: _friendSuggestionHeader(),
+                ),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: friendSuggestions.length,
+                    (context, index) {
+                      final FriendRequest friendRequest =
+                          friendSuggestions[index];
+                      return FriendSuggestionContainer(
+                        friendRequest: friendRequest,
+                      );
+                    },
+                  ),
+                ),
               ],
-            )),
-      ],
+            ),
+          ),
+          Container(
+              height: WidgetConfig.appBarHeight,
+              child: FacebookScreenAppBar(
+                title: "Friends",
+                actions: [
+                  CircleButton(
+                    icon: Icons.search,
+                    onPressed: () {},
+                  )
+                ],
+              )),
+        ],
+      ),
     );
   }
 
@@ -149,17 +161,14 @@ class _friendRequestHeader extends StatelessWidget {
           ),
           const Spacer(),
           GestureDetector(
-            onTap: () {},
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, "seeAllPage");
-              },
-              child: const Text(
-                "See all",
-                style: TextStyle(color: Palette.facebookBlue),
-              ),
+            onTap: () {
+              Navigator.pushNamed(context, "seeAllPage");
+            },
+            child: const Text(
+              "See all",
+              style: TextStyle(color: Palette.facebookBlue),
             ),
-          )
+          ),
         ],
       ),
     );

@@ -5,20 +5,22 @@ class CircleButton extends StatelessWidget {
   final double? iconSize;
   final VoidCallback onPressed;
   final EdgeInsets margin;
+  final double buttonSize;
 
   const CircleButton({
     super.key,
     required this.icon,
     required this.onPressed,
-    this.iconSize = null,
+    this.iconSize,
     this.margin = const EdgeInsets.only(right: 8),
+    this.buttonSize = 30,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 30,
-      // height: 30,
+      width: buttonSize,
+      height: buttonSize,
       margin: margin,
       decoration: BoxDecoration(
         shape: BoxShape.circle,

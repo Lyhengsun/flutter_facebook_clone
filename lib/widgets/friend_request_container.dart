@@ -125,7 +125,9 @@ class FriendRequestContainer extends StatelessWidget {
           label: "Confirm",
           backgroundColor: Palette.facebookBlue,
           foregroundColor: Colors.white,
-          onTap: () { print("Confirmed"); },
+          onTap: () {
+            print("Confirmed");
+          },
         ),
         SizedBox(
           width: 4,
@@ -176,23 +178,39 @@ class _FriendReqButtonState extends State<FriendReqButton> {
           isTap = false;
           setState(() {});
         },
+        onTapCancel: () {
+          isTap = false;
+          setState(() {});
+        },
         child: Transform.scale(
-          scale: isTap ? 0.95 : 1,
-          child: Container(
-            padding: EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              color: widget.backgroundColor,
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-            ),
-            child: Text(
-              widget.label,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: widget.foregroundColor,
-                fontWeight: FontWeight.w500,
-                fontSize: 12,
+          scale: isTap ? 0.98 : 1,
+          child: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: widget.backgroundColor,
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                ),
+                child: Text(
+                  widget.label,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: widget.foregroundColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                  ),
+                ),
               ),
-            ),
+              Container(
+                width: double.infinity,
+                height: 32,
+                decoration: BoxDecoration(
+                    color: isTap ? Colors.black.withOpacity(0.2) : Colors.transparent,
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
+              ),
+            ],
           ),
         ),
       ),

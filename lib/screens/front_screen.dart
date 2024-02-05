@@ -35,11 +35,6 @@ class _FrontScreenState extends State<FrontScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: WidgetConfig.statusBarHeight,
-        backgroundColor: Colors.white,
-        scrolledUnderElevation: 0,
-      ),
       body: _buildBody(),
       bottomNavigationBar: _buildBottom(),
     );
@@ -69,9 +64,7 @@ class _FrontScreenState extends State<FrontScreen> {
           color: Colors.yellow,
         ),
         NotificationScreen(),
-        Container(
-          color: Colors.cyan,
-        )
+        MenuScreen(),
       ],
     );
   }

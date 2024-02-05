@@ -31,90 +31,97 @@ class NotificationScreen extends StatelessWidget {
     bool todayNotificationActive =
         (todayNotification.length > 0) ? true : false;
 
-    return Stack(
-      children: [
-        Container(
-          color: Colors.white,
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Container(
-                  color: Colors.white,
-                  height: WidgetConfig.appBarHeight,
-                  width: double.maxFinite,
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: WidgetConfig.statusBarHeight,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+      ),
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.white,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Container(
+                    color: Colors.white,
+                    height: WidgetConfig.appBarHeight,
+                    width: double.maxFinite,
+                  ),
                 ),
-              ),
-              SliverToBoxAdapter(
-                child: newNotificationActive
-                    ? _buildNotificationHeader("New")
-                    : SizedBox.shrink(),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: newNotification.length,
-                  (context, index) {
-                    final NotificationModel notification =
-                        newNotification[index];
-                    return NotificationContainer(
-                      notification: notification,
-                    );
-                  },
+                SliverToBoxAdapter(
+                  child: newNotificationActive
+                      ? _buildNotificationHeader("New")
+                      : SizedBox.shrink(),
                 ),
-              ),
-              SliverToBoxAdapter(
-                child: todayNotificationActive
-                    ? _buildNotificationHeader("Today")
-                    : SizedBox.shrink(),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: todayNotification.length,
-                  (context, index) {
-                    final NotificationModel notification =
-                        todayNotification[index];
-                    return NotificationContainer(
-                      notification: notification,
-                    );
-                  },
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: newNotification.length,
+                    (context, index) {
+                      final NotificationModel notification =
+                          newNotification[index];
+                      return NotificationContainer(
+                        notification: notification,
+                      );
+                    },
+                  ),
                 ),
-              ),
-              SliverToBoxAdapter(
-                child: earlierNotificationActive
-                    ? _buildNotificationHeader("Earlier")
-                    : SizedBox.shrink(),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: earlierNotification.length,
-                  (context, index) {
-                    final NotificationModel notification =
-                        earlierNotification[index];
-                    return NotificationContainer(
-                      notification: notification,
-                    );
-                  },
+                SliverToBoxAdapter(
+                  child: todayNotificationActive
+                      ? _buildNotificationHeader("Today")
+                      : SizedBox.shrink(),
                 ),
-              ),
-            ],
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: todayNotification.length,
+                    (context, index) {
+                      final NotificationModel notification =
+                          todayNotification[index];
+                      return NotificationContainer(
+                        notification: notification,
+                      );
+                    },
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: earlierNotificationActive
+                      ? _buildNotificationHeader("Earlier")
+                      : SizedBox.shrink(),
+                ),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: earlierNotification.length,
+                    (context, index) {
+                      final NotificationModel notification =
+                          earlierNotification[index];
+                      return NotificationContainer(
+                        notification: notification,
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        Container(
-          height: WidgetConfig.appBarHeight,
-          child: FacebookScreenAppBar(
-            title: "Notifications",
-            actions: [
-              CircleButton(
-                icon: Icons.settings,
-                onPressed: () {},
-              ),
-              CircleButton(
-                icon: Icons.search,
-                onPressed: () {},
-              ),
-            ],
-          ),
-        )
-      ],
+          Container(
+            height: WidgetConfig.appBarHeight,
+            child: FacebookScreenAppBar(
+              title: "Notifications",
+              actions: [
+                CircleButton(
+                  icon: Icons.settings,
+                  onPressed: () {},
+                ),
+                CircleButton(
+                  icon: Icons.search,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 

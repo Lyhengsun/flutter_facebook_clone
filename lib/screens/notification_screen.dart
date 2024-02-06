@@ -32,20 +32,18 @@ class NotificationScreen extends StatelessWidget {
         (todayNotification.length > 0) ? true : false;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         toolbarHeight: WidgetConfig.statusBarHeight,
-        backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
       ),
       body: Stack(
         children: [
           Container(
-            color: Colors.white,
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
                   child: Container(
-                    color: Colors.white,
                     height: WidgetConfig.appBarHeight,
                     width: double.maxFinite,
                   ),
@@ -128,7 +126,6 @@ class NotificationScreen extends StatelessWidget {
   Widget _buildNotificationHeader(String title) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
-      color: Colors.white,
       width: double.maxFinite,
       height: 25,
       child: Text(

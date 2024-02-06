@@ -24,14 +24,12 @@ class _FriendScreenState extends State<FriendScreen> {
       body: Stack(
         children: [
           Container(
-            color: Colors.white,
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
                   child: Container(
                     height: WidgetConfig.appBarHeight,
                     width: double.maxFinite,
-                    color: Colors.white,
                   ),
                 ),
                 const SliverToBoxAdapter(
@@ -105,7 +103,6 @@ class _FriendScreenState extends State<FriendScreen> {
 
   Widget _divider() {
     return Container(
-      color: Colors.white,
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Divider(
         height: 1,
@@ -119,7 +116,6 @@ class _FriendScreenState extends State<FriendScreen> {
     return Container(
       padding: const EdgeInsets.all(15),
       width: double.maxFinite,
-      color: Colors.white,
       // height: 20,
       child: GestureDetector(
         onTap: () {
@@ -151,7 +147,6 @@ class _friendRequestHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
       padding: const EdgeInsets.fromLTRB(15, 15, 15, 10),
       child: Row(
         children: [
@@ -181,7 +176,6 @@ class _friendSuggestionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
       padding: const EdgeInsets.fromLTRB(15, 15, 15, 10),
       child: const Row(
         children: [

@@ -25,7 +25,6 @@ class _FacebookWideLabelButtonContainerState
       child: Container(
         padding: const EdgeInsets.all(15),
         width: double.maxFinite,
-        color: Colors.white,
         // height: 20,
         child: GestureDetector(
           onTapDown: (_) {
@@ -47,7 +46,7 @@ class _FacebookWideLabelButtonContainerState
                 width: double.maxFinite,
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
+                    color: Colors.grey[350],
                     borderRadius: const BorderRadius.all(Radius.circular(5))),
                 child: Text(
                   widget.label,

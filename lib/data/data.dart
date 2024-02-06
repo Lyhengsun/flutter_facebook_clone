@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/config/palette.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 final User currentUser = User(
   name: "Aijou Rentarou",
@@ -281,10 +283,100 @@ List<FriendRequest> friendSuggestions = [
 ];
 
 List<NotificationModel> notifications = [
-  NotificationModel(user: posts[0].user, type: NotificationType.updatePost, duration: posts[0].timeAgo, message: posts[0].caption),
-  NotificationModel(user: posts[1].user, type: NotificationType.updatePost, duration: posts[1].timeAgo, message: posts[1].caption),
-  NotificationModel(user: posts[2].user, type: NotificationType.updatePost, duration: posts[2].timeAgo, message: posts[2].caption),
-  NotificationModel(user: posts[3].user, type: NotificationType.updatePost, duration: posts[3].timeAgo, message: posts[3].caption),
-  NotificationModel(user: posts[4].user, type: NotificationType.updatePost, duration: posts[4].timeAgo, message: posts[4].caption),
-  NotificationModel(user: posts[5].user, type: NotificationType.updatePost, duration: posts[5].timeAgo, message: posts[5].caption),
+  NotificationModel(
+    user: posts[0].user,
+    type: NotificationType.updatePost,
+    duration: posts[0].timeAgo,
+    message: posts[0].caption,
+  ),
+  NotificationModel(
+    user: posts[1].user,
+    type: NotificationType.updatePost,
+    duration: posts[1].timeAgo,
+    message: posts[1].caption,
+  ),
+  NotificationModel(
+    user: posts[2].user,
+    type: NotificationType.updatePost,
+    duration: posts[2].timeAgo,
+    message: posts[2].caption,
+  ),
+  NotificationModel(
+    user: posts[3].user,
+    type: NotificationType.updatePost,
+    duration: posts[3].timeAgo,
+    message: posts[3].caption,
+  ),
+  NotificationModel(
+    user: posts[4].user,
+    type: NotificationType.updatePost,
+    duration: posts[4].timeAgo,
+    message: posts[4].caption,
+  ),
+  NotificationModel(
+    user: posts[5].user,
+    type: NotificationType.updatePost,
+    duration: posts[5].timeAgo,
+    message: posts[5].caption,
+  ),
+];
+
+var shortcuts = [
+  {
+    "icon": Icon(Icons.lock_clock, color: Palette.facebookBlue),
+    "label": "Memories"
+  },
+  {
+    "icon": Icon(Icons.bookmark, color: Palette.facebookBlue),
+    "label": "Saved"
+  },
+  {
+    "icon": Icon(Icons.group, color: Palette.facebookBlue),
+    "label": "Groups"
+  },
+  {
+    "icon": Icon(Icons.videocam, color: Palette.facebookBlue),
+    "label": "Videos"
+  },
+  {
+    "icon": Icon(Icons.storefront, color: Palette.facebookBlue),
+    "label": "Marketplace"
+  },
+  {
+    "icon": Icon(Icons.people, color: Palette.facebookBlue),
+    "label": "Friends"
+  },
+  {
+    "icon": Icon(Icons.feed, color: Palette.facebookBlue),
+    "label": "Feeds"
+  },
+  {
+    "icon": Icon(Icons.calendar_today, color: Palette.facebookBlue),
+    "label": "Events"
+  },
+  {
+    "icon": Icon(Icons.face, color: Palette.facebookBlue),
+    "label": "Avatars"
+  },
+  {
+    "icon": Icon(MdiIcons.facebookGaming, color: Palette.facebookBlue),
+    "label": "Gaming"
+  },
+  {
+    "icon": Icon(Icons.live_tv, color: Palette.facebookBlue),
+    "label": "Live videos"
+  },
+  {
+    "icon": Icon(MdiIcons.facebookMessenger, color: Palette.facebookBlue),
+    "label": "Messenger Kids"
+  },
+  {
+    "icon": Icon(Icons.local_offer, color: Palette.facebookBlue),
+    "label": "Offers"
+  },
+  {
+    "icon": Icon(Icons.flag, color: Palette.facebookBlue),
+    "label": "Pages"
+  },
+  
 ];

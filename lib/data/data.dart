@@ -321,19 +321,61 @@ List<NotificationModel> notifications = [
   ),
 ];
 
+var profileShortcuts = [
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  {
+    "imageURL": currentUser.imageURL,
+    "label": currentUser.name,
+  },
+  
+];
+
 var shortcuts = [
   {
     "icon": Icon(Icons.lock_clock, color: Palette.facebookBlue),
     "label": "Memories"
   },
-  {
-    "icon": Icon(Icons.bookmark, color: Palette.facebookBlue),
-    "label": "Saved"
-  },
-  {
-    "icon": Icon(Icons.group, color: Palette.facebookBlue),
-    "label": "Groups"
-  },
+  {"icon": Icon(Icons.bookmark, color: Palette.facebookBlue), "label": "Saved"},
+  {"icon": Icon(Icons.group, color: Palette.facebookBlue), "label": "Groups"},
   {
     "icon": Icon(Icons.videocam, color: Palette.facebookBlue),
     "label": "Videos"
@@ -342,22 +384,13 @@ var shortcuts = [
     "icon": Icon(Icons.storefront, color: Palette.facebookBlue),
     "label": "Marketplace"
   },
-  {
-    "icon": Icon(Icons.people, color: Palette.facebookBlue),
-    "label": "Friends"
-  },
-  {
-    "icon": Icon(Icons.feed, color: Palette.facebookBlue),
-    "label": "Feeds"
-  },
+  {"icon": Icon(Icons.people, color: Palette.facebookBlue), "label": "Friends"},
+  {"icon": Icon(Icons.feed, color: Palette.facebookBlue), "label": "Feeds"},
   {
     "icon": Icon(Icons.calendar_today, color: Palette.facebookBlue),
     "label": "Events"
   },
-  {
-    "icon": Icon(Icons.face, color: Palette.facebookBlue),
-    "label": "Avatars"
-  },
+  {"icon": Icon(Icons.face, color: Palette.facebookBlue), "label": "Avatars"},
   {
     "icon": Icon(MdiIcons.facebookGaming, color: Palette.facebookBlue),
     "label": "Gaming"
@@ -374,9 +407,5 @@ var shortcuts = [
     "icon": Icon(Icons.local_offer, color: Palette.facebookBlue),
     "label": "Offers"
   },
-  {
-    "icon": Icon(Icons.flag, color: Palette.facebookBlue),
-    "label": "Pages"
-  },
-  
+  {"icon": Icon(Icons.flag, color: Palette.facebookBlue), "label": "Pages"},
 ];

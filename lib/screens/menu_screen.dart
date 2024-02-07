@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_clone/config/palette.dart';
 import 'package:flutter_facebook_clone/config/widget_config.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 import 'package:flutter_facebook_clone/data/data.dart';
@@ -291,25 +292,65 @@ class _MenuScreenState extends State<MenuScreen> {
             ),
             width: 60,
             height: double.maxFinite,
-            color: Colors.red,
-            child: Column(
+            child: Stack(
               children: [
-                ProfileAvatar(
-                  imageUrl: currentUser.imageURL,
-                  size: 55,
+                Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade400,
+                            spreadRadius: 1,
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      child: ProfileAvatar(
+                        imageUrl: profileShortcuts[index]["imageURL"] ?? "",
+                        size: 55,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      profileShortcuts[index]["label"] ?? "",
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 9,
+                        color: Colors.black54,
+                        height: 1.2,
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  currentUser.name,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 9,
-                    color: Colors.black54,
-                    height: 1.2,
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: Container(
+                      width: 12,
+                      padding: EdgeInsets.all(1),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Palette.facebookBlue,
+                      ),
+                      child: Icon(
+                        Icons.people,
+                        color: Colors.white,
+                        size: 10,
+                      ),
+                    ),
                   ),
                 )
               ],

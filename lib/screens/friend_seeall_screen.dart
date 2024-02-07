@@ -11,6 +11,11 @@ class FriendSeeAllScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: WidgetConfig.statusBarHeight,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+      ),
       body: Stack(
         children: [
           Container(
@@ -30,16 +35,16 @@ class FriendSeeAllScreen extends StatelessWidget {
                   child: _friendRequestHeader(),
                 ),
                 SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: friendRequests.length,
-                  (context, index) {
-                    final FriendRequest friendRequest = friendRequests[index];
-                    return FriendRequestContainer(
-                      friendRequest: friendRequest,
-                    );
-                  },
+                  delegate: SliverChildBuilderDelegate(
+                    childCount: friendRequests.length,
+                    (context, index) {
+                      final FriendRequest friendRequest = friendRequests[index];
+                      return FriendRequestContainer(
+                        friendRequest: friendRequest,
+                      );
+                    },
+                  ),
                 ),
-              ),
               ],
             ),
           ),

@@ -86,16 +86,17 @@ class _FriendScreenState extends State<FriendScreen> {
             ),
           ),
           Container(
-              height: WidgetConfig.appBarHeight,
-              child: FacebookScreenAppBar(
-                title: "Friends",
-                actions: [
-                  CircleButton(
-                    icon: Icons.search,
-                    onPressed: () {},
-                  )
-                ],
-              )),
+            height: WidgetConfig.appBarHeight,
+            child: FacebookScreenAppBar(
+              title: "Friends",
+              actions: [
+                CircleButton(
+                  icon: Icons.search,
+                  onPressed: () {},
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

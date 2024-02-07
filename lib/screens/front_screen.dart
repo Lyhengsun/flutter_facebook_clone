@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_facebook_clone/config/widget_config.dart';
+import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:flutter_facebook_clone/screens/friend_seeall_screen.dart';
 import 'package:flutter_facebook_clone/screens/screens.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';

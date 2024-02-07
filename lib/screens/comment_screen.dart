@@ -1,131 +1,142 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_clone/config/palette.dart';
-import 'package:flutter_facebook_clone/models/models.dart';
-import 'package:flutter_facebook_clone/screens/screens.dart';
-import 'package:flutter_facebook_clone/state_module/post_notifier.dart';
+import 'package:flutter_facebook_clone/config/widget_config.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
+import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_facebook_clone/state_module/post_notifier.dart';
+import 'package:flutter_facebook_clone/config/palette.dart';
 
-class PostContainer extends StatefulWidget {
+class CommentScreen extends StatefulWidget {
   final Post post;
 
-  const PostContainer({super.key, required this.post});
+  const CommentScreen({
+    super.key,
+    required this.post,
+  });
 
   @override
-  State<PostContainer> createState() => _PostContainerState();
+  State<CommentScreen> createState() => _CommentScreenState();
 }
 
-class _PostContainerState extends State<PostContainer> {
+class _CommentScreenState extends State<CommentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 6),
-      padding: EdgeInsets.only(top: 5),
-      color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: WidgetConfig.statusBarHeight,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+      ),
+      body: Stack(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _PostHeader(
-                  post: widget.post,
+          CustomScrollView(
+            physics: BouncingScrollPhysics(),
+            slivers: [
+              SliverToBoxAdapter(
+                child: Container(
+                  height: WidgetConfig.appBarHeight,
+                  width: double.maxFinite,
                 ),
-                SizedBox(
-                  height: 4,
+              ),
+              SliverToBoxAdapter(
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    widget.post.caption,
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ),
-                Text(
-                  widget.post.caption,
-                  style: TextStyle(fontSize: 12),
+              ),
+              SliverToBoxAdapter(
+                child: widget.post.imageURL == null
+                    ? SizedBox.shrink()
+                    : CachedNetworkImage(
+                        imageUrl: widget.post.imageURL!,
+                      ),
+              ),
+              SliverToBoxAdapter(
+                child: MultiProvider(
+                  providers: [
+                    ChangeNotifierProvider(
+                      create: (x) => PostNotifier(post: widget.post),
+                    )
+                  ],
+                  child: _PostFooter(
+                    post: widget.post,
+                  ),
+                ),
+              )
+            ],
+          ),
+          Container(
+            height: WidgetConfig.appBarHeight,
+            child: AppBar(
+              leadingWidth: 30,
+              centerTitle: false,
+              backgroundColor: Colors.white,
+              scrolledUnderElevation: 0,
+              title: Container(
+                child: Row(
+                  children: [
+                    ProfileAvatar(
+                      size: 35,
+                      imageUrl: widget.post.user.imageURL,
+                      isActive: widget.post.user.isActive,
+                      addStory: widget.post.user.addStory,
+                      viewedStory: widget.post.user.viewedStory,
+                      backgroundColor: Colors.white,
+                      unviewedStory: Colors.grey,
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.post.user.name,
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.w500),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              FacebookDurationLabel(
+                                duration: widget.post.timeAgo,
+                              ),
+                              Text(
+                                " • ",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.black54),
+                              ),
+                              Icon(
+                                Icons.public,
+                                size: 12,
+                                color: Colors.black54,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.more_horiz),
+                  onPressed: () {},
                 ),
               ],
             ),
           ),
-          SizedBox(
-            height: 4,
-          ),
-          widget.post.imageURL == null
-              ? SizedBox.shrink()
-              : CachedNetworkImage(
-                  imageUrl: widget.post.imageURL!,
-                ),
-          Divider(
-            height: 0,
-            thickness: 1,
-          ),
-          MultiProvider(
-            providers: [
-              ChangeNotifierProvider(
-                create: (x) => PostNotifier(post: widget.post),
-              )
-            ],
-            child: _PostFooter(
-              post: widget.post,
-            ),
-          )
         ],
       ),
-    );
-  }
-}
-
-class _PostHeader extends StatelessWidget {
-  final Post post;
-
-  const _PostHeader({super.key, required this.post});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ProfileAvatar(
-          imageUrl: post.user.imageURL,
-          isActive: post.user.isActive,
-          addStory: post.user.addStory,
-          viewedStory: post.user.viewedStory,
-          backgroundColor: Colors.white,
-          unviewedStory: Colors.grey,
-        ),
-        const SizedBox(
-          width: 8,
-        ),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                post.user.name,
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  FacebookDurationLabel(
-                    duration: post.timeAgo,
-                  ),
-                  Text(
-                    " • ",
-                    style: TextStyle(fontSize: 10, color: Colors.black54),
-                  ),
-                  Icon(
-                    Icons.public,
-                    size: 12,
-                    color: Colors.black54,
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.more_horiz),
-        )
-      ],
     );
   }
 }
@@ -182,69 +193,14 @@ class _PostStatsState extends State<_PostStats> {
             ),
           ),
           Spacer(),
-          Text(
-            "${context.watch<PostNotifier>().comments} comments",
-            style: TextStyle(
-              fontSize: fontSize,
-              color: Colors.black54,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
           SizedBox(
             width: 8,
-          ),
-          Text(
-            "${context.watch<PostNotifier>().shares} shares",
-            style: TextStyle(
-              fontSize: fontSize,
-              color: Colors.black54,
-              fontWeight: FontWeight.w500,
-            ),
           ),
         ],
       ),
     );
   }
 }
-
-// Expanded _PostButtonSimple(BuildContext context, Icon icon, Icon? tappedIcon, VoidCallback onTap) {
-//   return Expanded(
-//       child: Material(
-//         child: InkWell(
-//           onTap: () {
-//             isTap = !isTap;
-//             print("ok");
-//             onTap;
-//           },
-//           child: Container(
-//             height: 30,
-//             width: double.infinity,
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 isTap && tappedIcon != null
-//                     ? tappedIcon!
-//                     : icon,
-//                 SizedBox(
-//                   width: 4,
-//                 ),
-//                 Text(
-//                   widget.label,
-//                   style: TextStyle(
-//                     fontSize: 12,
-//                     fontWeight: FontWeight.w600,
-//                     color: isTap && widget.tappedIcon != null
-//                         ? widget.tappedIcon!.color
-//                         : widget.icon.color,
-//                   ),
-//                 )
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-// }
 
 class _PostButton extends StatefulWidget {
   final VoidCallback onTap;
@@ -332,8 +288,11 @@ class _PostFooterState extends State<_PostFooter> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _PostStats(),
+        SizedBox(
+          height: 8,
+        ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
           child: Divider(
@@ -369,19 +328,7 @@ class _PostFooterState extends State<_PostFooter> {
                 ),
               ),
               _PostButton(
-                onTap: () {
-                  Navigator.of(context).push(CustomPageRoute(
-                    child: CommentScreen(
-                      post: widget.post,
-                    ),
-                  )
-                      // MaterialPageRoute(
-                      //   builder: (x) => CommentScreen(
-                      //     post: widget.post,
-                      //   ),
-                      // ),
-                      );
-                },
+                onTap: () {},
                 label: "Comment",
                 icon: Icon(
                   MdiIcons.commentOutline,
@@ -400,7 +347,33 @@ class _PostFooterState extends State<_PostFooter> {
               ),
             ],
           ),
-        )
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: Divider(
+            height: 0,
+          ),
+        ),
+        _PostStats(),
+        Container(
+          child: Divider(
+            height: 0,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 6,
+            horizontal: 12,
+          ),
+          child: Text(
+            "${context.watch<PostNotifier>().shares} shares",
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
       ],
     );
   }

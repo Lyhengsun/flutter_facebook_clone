@@ -1,8 +1,7 @@
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_clone/config/widget_config.dart';
+import 'package:flutter_facebook_clone/data/data.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
 import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -134,6 +133,93 @@ class _CommentScreenState extends State<CommentScreen> {
                 ),
               ],
             ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade300,
+            spreadRadius: 0.5,
+            blurRadius: 10,
+          ),
+        ]),
+        child: BottomAppBar(
+          elevation: 0,
+          color: Colors.white,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(Icons.camera_alt_outlined),
+                onPressed: () {},
+              ),
+              Expanded(
+                child: CommentTextField(),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CommentTextField extends StatelessWidget {
+  const CommentTextField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(15),
+        ),
+        color: Colors.grey.shade300
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+              child: TextField(
+                decoration: InputDecoration.collapsed(
+                  hintText: "Comment as ${currentUser.name}",
+                  hintStyle: TextStyle(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Container(
+              width: 33,
+              height: 20,
+              child: IconButton(
+                icon: Icon(Icons.message),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+              )),
+          Container(
+              width: 33,
+              height: 20,
+              child: IconButton(
+                icon: Icon(Icons.gif_box),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+              )),
+          Container(
+              width: 33,
+              height: 20,
+              child: IconButton(
+                icon: Icon(Icons.emoji_emotions),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+              )),
+          SizedBox(
+            width: 15,
           ),
         ],
       ),

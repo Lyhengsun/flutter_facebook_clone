@@ -11,6 +11,7 @@ enum NotificationType {
 }
 
 class NotificationModel {
+  final Post post;
   final User user;
   final NotificationType type;
   final Duration duration;
@@ -18,10 +19,8 @@ class NotificationModel {
   final bool checked;
 
   NotificationModel({
-    required this.user,
+    required this.post,
     required this.type,
-    required this.duration,
-    this.message = "",
     this.checked = false,
-  });
+  }) : user = post.user, duration = post.timeAgo, message = post.caption;
 }

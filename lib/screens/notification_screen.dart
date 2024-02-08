@@ -41,6 +41,7 @@ class NotificationScreen extends StatelessWidget {
         children: [
           Container(
             child: CustomScrollView(
+              physics: BouncingScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(
                   child: Container(

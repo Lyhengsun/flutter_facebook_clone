@@ -303,40 +303,28 @@ List<FriendRequest> friendSuggestions = [
 
 List<NotificationModel> notifications = [
   NotificationModel(
-    user: posts[0].user,
+    post: posts[0],
     type: NotificationType.updatePost,
-    duration: posts[0].timeAgo,
-    message: posts[0].caption,
   ),
   NotificationModel(
-    user: posts[1].user,
+    post: posts[1],
     type: NotificationType.updatePost,
-    duration: posts[1].timeAgo,
-    message: posts[1].caption,
   ),
   NotificationModel(
-    user: posts[2].user,
+    post: posts[2],
     type: NotificationType.updatePost,
-    duration: posts[2].timeAgo,
-    message: posts[2].caption,
   ),
   NotificationModel(
-    user: posts[3].user,
+    post: posts[3],
     type: NotificationType.updatePost,
-    duration: posts[3].timeAgo,
-    message: posts[3].caption,
   ),
   NotificationModel(
-    user: posts[4].user,
+    post: posts[4],
     type: NotificationType.updatePost,
-    duration: posts[4].timeAgo,
-    message: posts[4].caption,
   ),
   NotificationModel(
-    user: posts[5].user,
+    post: posts[5],
     type: NotificationType.updatePost,
-    duration: posts[5].timeAgo,
-    message: posts[5].caption,
   ),
 ];
 

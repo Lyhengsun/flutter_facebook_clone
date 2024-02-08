@@ -172,11 +172,10 @@ class CommentTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(15),
-        ),
-        color: Colors.grey.shade300
-      ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(15),
+          ),
+          color: Colors.grey.shade300),
       child: Row(
         children: [
           Expanded(
@@ -292,11 +291,13 @@ class _PostButton extends StatefulWidget {
   final Icon? tappedIcon;
   final Colors? tappedColor;
 
-  const _PostButton(
-      {required this.onTap,
-      required this.label,
-      required this.icon,
-      this.tappedIcon});
+  const _PostButton({
+    required this.onTap,
+    required this.label,
+    required this.icon,
+    this.tappedColor,
+    this.tappedIcon,
+  });
 
   @override
   State<_PostButton> createState() => _PostButtonState();

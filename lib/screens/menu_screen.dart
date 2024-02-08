@@ -363,8 +363,9 @@ class _MenuScreenState extends State<MenuScreen> {
 
   SliverChildDelegate _buildMenuButtonListDelegate(int childCount) {
     return SliverChildBuilderDelegate(childCount: childCount, (context, index) {
-      return _buildMenuButtonDelegate(shortcuts[index]["icon"] as Widget,
-          shortcuts[index]["label"] as String);
+      return buildMenuButtonDelegate(
+          icon: shortcuts[index]["icon"] as Icon,
+          label: shortcuts[index]["label"] as String);
     });
 
     // return SliverChildListDelegate([
@@ -430,7 +431,99 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 }
 
+class buildMenuButtonDelegate extends StatefulWidget {
+  final Icon icon;
+  final String label;
+  const buildMenuButtonDelegate(
+      {super.key, required this.icon, required this.label});
 
+  @override
+  State<buildMenuButtonDelegate> createState() =>
+      _buildMenuButtonDelegateState();
+}
+
+class _buildMenuButtonDelegateState extends State<buildMenuButtonDelegate> {
+  final _key = GlobalKey();
+  bool isTapped = false;
+  double containerHeight = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) {
+        containerHeight = _key.currentContext!.size!.height;
+        isTapped = true;
+        setState(() {});
+      },
+      onTapUp: (_) {
+        isTapped = false;
+        setState(() {});
+      },
+      onTapCancel: () {
+        isTapped = false;
+        setState(() {});
+      },
+      child: Stack(
+        children: [
+          Container(
+            key: _key,
+            width: double.maxFinite,
+            margin: EdgeInsets.fromLTRB(4, 0, 4, 8),
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(5),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade400,
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                )
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  // color: Colors.green,
+                  padding: EdgeInsets.all(1),
+                  child: widget.icon,
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Text(
+                  widget.label,
+                  style: TextStyle(
+                    fontSize: 11,
+                    height: 0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Spacer(),
+                Container(),
+              ],
+            ),
+          ),
+          Container(
+            width: double.maxFinite-5,
+            height: containerHeight==0 ? 0 : containerHeight-2,
+            decoration: BoxDecoration(
+              color:
+                  isTapped ? Colors.grey.withOpacity(0.2) : Colors.transparent,
+              borderRadius: BorderRadius.all(
+                Radius.circular(5),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
 
 // class Item {
 //   String headerText;

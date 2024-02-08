@@ -37,8 +37,8 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
           SliverToBoxAdapter(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: const Text(
                 "Your shortcuts",
                 style: TextStyle(
                   height: 0,
@@ -52,9 +52,9 @@ class _MenuScreenState extends State<MenuScreen> {
             child: _buildShortcutsListView(),
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 2.2 / 1,
               ),
@@ -79,29 +79,29 @@ class _MenuScreenState extends State<MenuScreen> {
           // )
           SliverToBoxAdapter(
             child: MenuExpansionTileContainer(
-              leadingIcon: Icon(
+              leadingIcon: const Icon(
                 Icons.help,
                 size: 30,
               ),
               text: 'Help & Support',
               children: [
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.healing),
+                  leadingIcon: const Icon(Icons.healing),
                   title: "Help Center",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.inbox),
+                  leadingIcon: const Icon(Icons.inbox),
                   title: "Support Inbox",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.warning),
+                  leadingIcon: const Icon(Icons.warning),
                   title: "Report a problem",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.book),
+                  leadingIcon: const Icon(Icons.book),
                   title: "Terms & Policies",
                   onTap: () {},
                 ),
@@ -113,64 +113,64 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
           SliverToBoxAdapter(
             child: MenuExpansionTileContainer(
-              leadingIcon: Icon(
+              leadingIcon: const Icon(
                 Icons.settings,
                 size: 30,
               ),
               text: 'Settings & privacy',
               children: [
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.person),
+                  leadingIcon: const Icon(Icons.person),
                   title: "Settings",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.lock),
+                  leadingIcon: const Icon(Icons.lock),
                   title: "Privary shortcuts",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.timer),
+                  leadingIcon: const Icon(Icons.timer),
                   title: "Your time on facebook",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.devices),
+                  leadingIcon: const Icon(Icons.devices),
                   title: "Device requests",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.tv),
+                  leadingIcon: const Icon(Icons.tv),
                   title: "Recent ad activity",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.wifi),
+                  leadingIcon: const Icon(Icons.wifi),
                   title: "Mobile Center",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.credit_card),
+                  leadingIcon: const Icon(Icons.credit_card),
                   title: "Orders and payments",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.link),
+                  leadingIcon: const Icon(Icons.link),
                   title: "Link history",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.dark_mode),
+                  leadingIcon: const Icon(Icons.dark_mode),
                   title: "Dark Mode",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.web),
+                  leadingIcon: const Icon(Icons.web),
                   title: "App language",
                   onTap: () {},
                 ),
                 MenuExpansionTileButton(
-                  leadingIcon: Icon(Icons.phone),
+                  leadingIcon: const Icon(Icons.phone),
                   title: "Cellular data use",
                   onTap: () {},
                 ),
@@ -224,12 +224,12 @@ class _MenuScreenState extends State<MenuScreen> {
 
   Widget _buildMenuHeader() {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       width: double.maxFinite,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(5),
           ),
           boxShadow: [
@@ -240,7 +240,7 @@ class _MenuScreenState extends State<MenuScreen> {
             )
           ],
         ),
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 12,
           vertical: 13,
         ),
@@ -255,14 +255,14 @@ class _MenuScreenState extends State<MenuScreen> {
                     imageUrl: currentUser.imageURL,
                     size: 38,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(
                     currentUser.name,
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   CircleButton(
                     icon: Icons.arrow_drop_down,
                     buttonSize: 28,
@@ -280,14 +280,14 @@ class _MenuScreenState extends State<MenuScreen> {
   Widget _buildShortcutsListView() {
     return Container(
       height: 115,
-      padding: EdgeInsets.symmetric(vertical: 13),
+      padding: const EdgeInsets.symmetric(vertical: 13),
       child: ListView.builder(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            margin: EdgeInsets.symmetric(
+            margin: const EdgeInsets.symmetric(
               horizontal: 10,
             ),
             width: 60,
@@ -312,7 +312,7 @@ class _MenuScreenState extends State<MenuScreen> {
                         size: 55,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
@@ -320,7 +320,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 9,
                         color: Colors.black54,
                         height: 1.2,
@@ -333,19 +333,19 @@ class _MenuScreenState extends State<MenuScreen> {
                   top: 0,
                   bottom: 0,
                   child: Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
                     ),
                     child: Container(
                       width: 12,
-                      padding: EdgeInsets.all(1),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.all(1),
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Palette.facebookBlue,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.people,
                         color: Colors.white,
                         size: 10,
@@ -363,7 +363,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
   SliverChildDelegate _buildMenuButtonListDelegate(int childCount) {
     return SliverChildBuilderDelegate(childCount: childCount, (context, index) {
-      return buildMenuButtonDelegate(
+      return BuildMenuButtonDelegate(
           icon: shortcuts[index]["icon"] as Icon,
           label: shortcuts[index]["label"] as String);
     });
@@ -387,62 +387,20 @@ class _MenuScreenState extends State<MenuScreen> {
     //       Icon(Icons.calendar_today, color: Palette.facebookBlue), "Events"),
     // ]);
   }
-
-  Widget _buildMenuButtonDelegate(Widget icon, String label) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(4, 0, 4, 8),
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            spreadRadius: 1,
-            blurRadius: 10,
-          )
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            // color: Colors.green,
-            padding: EdgeInsets.all(1),
-            child: icon,
-          ),
-          SizedBox(
-            height: 4,
-          ),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 11,
-              height: 0,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
 
-class buildMenuButtonDelegate extends StatefulWidget {
+class BuildMenuButtonDelegate extends StatefulWidget {
   final Icon icon;
   final String label;
-  const buildMenuButtonDelegate(
+  const BuildMenuButtonDelegate(
       {super.key, required this.icon, required this.label});
 
   @override
-  State<buildMenuButtonDelegate> createState() =>
-      _buildMenuButtonDelegateState();
+  State<BuildMenuButtonDelegate> createState() =>
+      _BuildMenuButtonDelegateState();
 }
 
-class _buildMenuButtonDelegateState extends State<buildMenuButtonDelegate> {
+class _BuildMenuButtonDelegateState extends State<BuildMenuButtonDelegate> {
   final _key = GlobalKey();
   bool isTapped = false;
   double containerHeight = 0;
@@ -468,11 +426,11 @@ class _buildMenuButtonDelegateState extends State<buildMenuButtonDelegate> {
           Container(
             key: _key,
             width: double.maxFinite,
-            margin: EdgeInsets.fromLTRB(4, 0, 4, 8),
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+            margin: const EdgeInsets.fromLTRB(4, 0, 4, 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(5),
               ),
               boxShadow: [
@@ -489,21 +447,21 @@ class _buildMenuButtonDelegateState extends State<buildMenuButtonDelegate> {
               children: [
                 Container(
                   // color: Colors.green,
-                  padding: EdgeInsets.all(1),
+                  padding: const EdgeInsets.all(1),
                   child: widget.icon,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
                 Text(
                   widget.label,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     height: 0,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(),
               ],
             ),
@@ -514,7 +472,7 @@ class _buildMenuButtonDelegateState extends State<buildMenuButtonDelegate> {
             decoration: BoxDecoration(
               color:
                   isTapped ? Colors.grey.withOpacity(0.2) : Colors.transparent,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(5),
               ),
             ),

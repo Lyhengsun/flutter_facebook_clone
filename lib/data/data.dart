@@ -167,7 +167,7 @@ final List<Post> posts = [
   Post(
     user: onlineUsers[0],
     caption: "Hi, all friend!",
-    timeAgo: Duration(minutes: 58),
+    timeAgo: const Duration(minutes: 58),
     imageURL:
         "https://i.pinimg.com/736x/12/fe/57/12fe571ef1505541306a61e5aac01d49.jpg",
     likes: 1284,
@@ -177,7 +177,7 @@ final List<Post> posts = [
   Post(
     user: onlineUsers[1],
     caption: "I'm miss you",
-    timeAgo: Duration(hours: 2),
+    timeAgo: const Duration(hours: 2),
     imageURL:
         "https://i.pinimg.com/564x/4e/96/10/4e96106ab10004a236c8a01124367aef.jpg",
     likes: 1284,
@@ -187,7 +187,7 @@ final List<Post> posts = [
   Post(
     user: onlineUsers[2],
     caption: "I'm from US",
-    timeAgo: Duration(minutes: 10),
+    timeAgo: const Duration(minutes: 10),
     imageURL:
         "https://i.pinimg.com/564x/78/7d/a0/787da003a99eab5533b51059ff517aca.jpg",
     likes: 1284,
@@ -197,7 +197,7 @@ final List<Post> posts = [
   Post(
     user: onlineUsers[3],
     caption: "Where you from?",
-    timeAgo: Duration(minutes: 20),
+    timeAgo: const Duration(minutes: 20),
     imageURL:
         "https://i.pinimg.com/736x/89/0e/e8/890ee8b4dd9719e7c94ef662923bc0e3.jpg",
     likes: 1284,
@@ -207,7 +207,7 @@ final List<Post> posts = [
   Post(
     user: onlineUsers[4],
     caption: "ផឹកកាហ្វេហេ",
-    timeAgo: Duration(hours: 5),
+    timeAgo: const Duration(hours: 5),
     imageURL:
         "https://i.pinimg.com/564x/9c/22/f8/9c22f871a6c06315a277e7225cfcf9e1.jpg",
     likes: 1284,
@@ -217,7 +217,7 @@ final List<Post> posts = [
   Post(
     user: onlineUsers[5],
     caption: "How cute?",
-    timeAgo: Duration(hours: 3),
+    timeAgo: const Duration(hours: 3),
     imageURL:
         "https://i.pinimg.com/564x/c8/7d/2f/c87d2fc77faa27afae42196001709675.jpg",
     likes: 1284,
@@ -230,51 +230,51 @@ final List<FriendRequest> friendRequests = [
   FriendRequest(
       user: onlineUsers[6],
       mutualFriendsAmount: 6,
-      requestDuration: Duration(days: 7)),
+      requestDuration: const Duration(days: 7)),
   FriendRequest(
     user: onlineUsers[7],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 6),
+    requestDuration: const Duration(days: 6),
   ),
   FriendRequest(
     user: onlineUsers[8],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 8),
+    requestDuration: const Duration(days: 8),
   ),
   FriendRequest(
     user: onlineUsers[9],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 7),
+    requestDuration: const Duration(days: 7),
   ),
   FriendRequest(
     user: onlineUsers[10],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 10),
+    requestDuration: const Duration(days: 10),
   ),
   FriendRequest(
     user: onlineUsers[11],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 14),
+    requestDuration: const Duration(days: 14),
   ),
   FriendRequest(
     user: onlineUsers[12],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 15),
+    requestDuration: const Duration(days: 15),
   ),
   FriendRequest(
     user: onlineUsers[13],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 9),
+    requestDuration: const Duration(days: 9),
   ),
   FriendRequest(
     user: onlineUsers[14],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 14),
+    requestDuration: const Duration(days: 14),
   ),
   FriendRequest(
     user: onlineUsers[15],
     mutualFriendsAmount: 6,
-    requestDuration: Duration(days: 31),
+    requestDuration: const Duration(days: 31),
   ),
 ];
 
@@ -388,32 +388,32 @@ var profileShortcuts = [
 
 var shortcuts = [
   {
-    "icon": Icon(Icons.lock_clock, color: Palette.facebookBlue),
+    "icon": const Icon(Icons.lock_clock, color: Palette.facebookBlue),
     "label": "Memories"
   },
-  {"icon": Icon(Icons.bookmark, color: Palette.facebookBlue), "label": "Saved"},
-  {"icon": Icon(Icons.group, color: Palette.facebookBlue), "label": "Groups"},
+  {"icon": const Icon(Icons.bookmark, color: Palette.facebookBlue), "label": "Saved"},
+  {"icon": const Icon(Icons.group, color: Palette.facebookBlue), "label": "Groups"},
   {
-    "icon": Icon(Icons.videocam, color: Palette.facebookBlue),
+    "icon": const Icon(Icons.videocam, color: Palette.facebookBlue),
     "label": "Videos"
   },
   {
-    "icon": Icon(Icons.storefront, color: Palette.facebookBlue),
+    "icon": const Icon(Icons.storefront, color: Palette.facebookBlue),
     "label": "Marketplace"
   },
-  {"icon": Icon(Icons.people, color: Palette.facebookBlue), "label": "Friends"},
-  {"icon": Icon(Icons.feed, color: Palette.facebookBlue), "label": "Feeds"},
+  {"icon": const Icon(Icons.people, color: Palette.facebookBlue), "label": "Friends"},
+  {"icon": const Icon(Icons.feed, color: Palette.facebookBlue), "label": "Feeds"},
   {
-    "icon": Icon(Icons.calendar_today, color: Palette.facebookBlue),
+    "icon": const Icon(Icons.calendar_today, color: Palette.facebookBlue),
     "label": "Events"
   },
-  {"icon": Icon(Icons.face, color: Palette.facebookBlue), "label": "Avatars"},
+  {"icon": const Icon(Icons.face, color: Palette.facebookBlue), "label": "Avatars"},
   {
     "icon": Icon(MdiIcons.facebookGaming, color: Palette.facebookBlue),
     "label": "Gaming"
   },
   {
-    "icon": Icon(Icons.live_tv, color: Palette.facebookBlue),
+    "icon": const Icon(Icons.live_tv, color: Palette.facebookBlue),
     "label": "Live videos"
   },
   {
@@ -421,8 +421,8 @@ var shortcuts = [
     "label": "Messenger Kids"
   },
   {
-    "icon": Icon(Icons.local_offer, color: Palette.facebookBlue),
+    "icon": const Icon(Icons.local_offer, color: Palette.facebookBlue),
     "label": "Offers"
   },
-  {"icon": Icon(Icons.flag, color: Palette.facebookBlue), "label": "Pages"},
+  {"icon": const Icon(Icons.flag, color: Palette.facebookBlue), "label": "Pages"},
 ];

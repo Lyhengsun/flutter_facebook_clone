@@ -20,7 +20,7 @@ class FriendSeeAllScreen extends StatelessWidget {
         children: [
           Container(
             child: CustomScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(
                   child: Container(
@@ -32,7 +32,7 @@ class FriendSeeAllScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: _divider(),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: _friendRequestHeader(),
                 ),
                 SliverList(
@@ -49,10 +49,10 @@ class FriendSeeAllScreen extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             height: WidgetConfig.appBarHeight,
             child: AppBar(
-              title: Text(
+              title: const Text(
                 "Friend requests",
                 style: TextStyle(
                     color: Colors.black87,
@@ -65,25 +65,25 @@ class FriendSeeAllScreen extends StatelessWidget {
               actions: [
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                       // height: 20,
                       width: 30,
                       child: IconButton(
                         padding: EdgeInsets.zero,
-                        icon: Icon(Icons.more_horiz),
-                        onPressed: () {},
-                      ),
-                    ),
-                    Container(
-                      // height: 20,
-                      width: 30,
-                      child: IconButton(
-                        padding: EdgeInsets.zero,
-                        icon: Icon(Icons.search),
+                        icon: const Icon(Icons.more_horiz),
                         onPressed: () {},
                       ),
                     ),
                     SizedBox(
+                      // height: 20,
+                      width: 30,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        icon: const Icon(Icons.search),
+                        onPressed: () {},
+                      ),
+                    ),
+                    const SizedBox(
                       width: 10,
                     ),
                   ],
@@ -108,25 +108,25 @@ class FriendSeeAllScreen extends StatelessWidget {
 }
 
 class _friendRequestHeader extends StatelessWidget {
-  const _friendRequestHeader({super.key});
+  const _friendRequestHeader();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.fromLTRB(15, 15, 15, 10),
+      padding: const EdgeInsets.fromLTRB(15, 15, 15, 10),
       child: Row(
         children: [
-          Text(
+          const Text(
             "Friend requests",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
-          Spacer(),
+          const Spacer(),
           GestureDetector(
             onTap: () {},
             child: GestureDetector(
               onTap: () {},
-              child: Text(
+              child: const Text(
                 "Sort",
                 style: TextStyle(color: Palette.facebookBlue),
               ),

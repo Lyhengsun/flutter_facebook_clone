@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_facebook_clone/config/widget_config.dart';
-import 'package:flutter_facebook_clone/models/models.dart';
 import 'package:flutter_facebook_clone/screens/friend_seeall_screen.dart';
 import 'package:flutter_facebook_clone/screens/screens.dart';
 import 'package:flutter_facebook_clone/widgets/widgets.dart';
@@ -53,8 +52,8 @@ class _FrontScreenState extends State<FrontScreen> {
         ),
         Navigator(
           onGenerateRoute: (settings) {
-            Widget page = FriendScreen();
-            if (settings.name == "seeAllPage") page = FriendSeeAllScreen();
+            Widget page = const FriendScreen();
+            if (settings.name == "seeAllPage") page = const FriendSeeAllScreen();
             // return MaterialPageRoute(
             //   builder: (_) => page,
             // );
@@ -64,8 +63,8 @@ class _FrontScreenState extends State<FrontScreen> {
         Container(
           color: Colors.yellow,
         ),
-        NotificationScreen(),
-        MenuScreen(),
+        const NotificationScreen(),
+        const MenuScreen(),
       ],
     );
   }

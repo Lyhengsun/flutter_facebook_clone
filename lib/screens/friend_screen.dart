@@ -25,10 +25,10 @@ class _FriendScreenState extends State<FriendScreen> {
         children: [
           Container(
             child: CustomScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               slivers: [
-                SliverToBoxAdapter(
-                  child: Container(
+                const SliverToBoxAdapter(
+                  child: SizedBox(
                     height: WidgetConfig.appBarHeight,
                     width: double.maxFinite,
                   ),
@@ -86,7 +86,7 @@ class _FriendScreenState extends State<FriendScreen> {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             height: WidgetConfig.appBarHeight,
             child: FacebookScreenAppBar(
               title: "Friends",
@@ -144,7 +144,7 @@ class _FriendScreenState extends State<FriendScreen> {
 }
 
 class _friendRequestHeader extends StatelessWidget {
-  const _friendRequestHeader({super.key});
+  const _friendRequestHeader();
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +173,7 @@ class _friendRequestHeader extends StatelessWidget {
 }
 
 class _friendSuggestionHeader extends StatelessWidget {
-  const _friendSuggestionHeader({super.key});
+  const _friendSuggestionHeader();
 
   @override
   Widget build(BuildContext context) {

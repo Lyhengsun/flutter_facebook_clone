@@ -25,11 +25,11 @@ class NotificationScreen extends StatelessWidget {
       earlierNotification.add(notification);
     }
 
-    bool newNotificationActive = (newNotification.length > 0) ? true : false;
+    bool newNotificationActive = (newNotification.isNotEmpty) ? true : false;
     bool earlierNotificationActive =
-        (earlierNotification.length > 0) ? true : false;
+        (earlierNotification.isNotEmpty) ? true : false;
     bool todayNotificationActive =
-        (todayNotification.length > 0) ? true : false;
+        (todayNotification.isNotEmpty) ? true : false;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -41,10 +41,10 @@ class NotificationScreen extends StatelessWidget {
         children: [
           Container(
             child: CustomScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               slivers: [
-                SliverToBoxAdapter(
-                  child: Container(
+                const SliverToBoxAdapter(
+                  child: SizedBox(
                     height: WidgetConfig.appBarHeight,
                     width: double.maxFinite,
                   ),
@@ -52,7 +52,7 @@ class NotificationScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: newNotificationActive
                       ? _buildNotificationHeader("New")
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
@@ -69,7 +69,7 @@ class NotificationScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: todayNotificationActive
                       ? _buildNotificationHeader("Today")
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
@@ -86,7 +86,7 @@ class NotificationScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: earlierNotificationActive
                       ? _buildNotificationHeader("Earlier")
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
@@ -103,7 +103,7 @@ class NotificationScreen extends StatelessWidget {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             height: WidgetConfig.appBarHeight,
             child: FacebookScreenAppBar(
               title: "Notifications",
@@ -126,12 +126,12 @@ class NotificationScreen extends StatelessWidget {
 
   Widget _buildNotificationHeader(String title) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       width: double.maxFinite,
       height: 25,
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,
         ),

@@ -33,26 +33,26 @@ class _CommentScreenState extends State<CommentScreen> {
       body: Stack(
         children: [
           CustomScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             slivers: [
-              SliverToBoxAdapter(
-                child: Container(
+              const SliverToBoxAdapter(
+                child: SizedBox(
                   height: WidgetConfig.appBarHeight,
                   width: double.maxFinite,
                 ),
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     widget.post.caption,
-                    style: TextStyle(fontSize: 12),
+                    style: const TextStyle(fontSize: 12),
                   ),
                 ),
               ),
               SliverToBoxAdapter(
                 child: widget.post.imageURL == null
-                    ? SizedBox.shrink()
+                    ? const SizedBox.shrink()
                     : CachedNetworkImage(
                         imageUrl: widget.post.imageURL!,
                       ),
@@ -71,7 +71,7 @@ class _CommentScreenState extends State<CommentScreen> {
               )
             ],
           ),
-          Container(
+          SizedBox(
             height: WidgetConfig.appBarHeight,
             child: AppBar(
               leadingWidth: 30,
@@ -99,7 +99,7 @@ class _CommentScreenState extends State<CommentScreen> {
                         children: [
                           Text(
                             widget.post.user.name,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 12, fontWeight: FontWeight.w500),
                           ),
                           Row(
@@ -108,12 +108,12 @@ class _CommentScreenState extends State<CommentScreen> {
                               FacebookDurationLabel(
                                 duration: widget.post.timeAgo,
                               ),
-                              Text(
+                              const Text(
                                 " • ",
                                 style: TextStyle(
                                     fontSize: 10, color: Colors.black54),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.public,
                                 size: 12,
                                 color: Colors.black54,
@@ -128,7 +128,7 @@ class _CommentScreenState extends State<CommentScreen> {
               ),
               actions: [
                 IconButton(
-                  icon: Icon(Icons.more_horiz),
+                  icon: const Icon(Icons.more_horiz),
                   onPressed: () {},
                 ),
               ],
@@ -151,10 +151,10 @@ class _CommentScreenState extends State<CommentScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.camera_alt_outlined),
+                icon: const Icon(Icons.camera_alt_outlined),
                 onPressed: () {},
               ),
-              Expanded(
+              const Expanded(
                 child: CommentTextField(),
               ),
             ],
@@ -172,7 +172,7 @@ class CommentTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
         color: Colors.grey.shade300
@@ -181,11 +181,11 @@ class CommentTextField extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
               child: TextField(
                 decoration: InputDecoration.collapsed(
                   hintText: "Comment as ${currentUser.name}",
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Colors.black87,
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
@@ -194,31 +194,31 @@ class CommentTextField extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
               width: 33,
               height: 20,
               child: IconButton(
-                icon: Icon(Icons.message),
-                onPressed: () {},
-                padding: EdgeInsets.zero,
-              )),
-          Container(
-              width: 33,
-              height: 20,
-              child: IconButton(
-                icon: Icon(Icons.gif_box),
-                onPressed: () {},
-                padding: EdgeInsets.zero,
-              )),
-          Container(
-              width: 33,
-              height: 20,
-              child: IconButton(
-                icon: Icon(Icons.emoji_emotions),
+                icon: const Icon(Icons.message),
                 onPressed: () {},
                 padding: EdgeInsets.zero,
               )),
           SizedBox(
+              width: 33,
+              height: 20,
+              child: IconButton(
+                icon: const Icon(Icons.gif_box),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+              )),
+          SizedBox(
+              width: 33,
+              height: 20,
+              child: IconButton(
+                icon: const Icon(Icons.emoji_emotions),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+              )),
+          const SizedBox(
             width: 15,
           ),
         ],
@@ -230,10 +230,7 @@ class CommentTextField extends StatelessWidget {
 class _PostStats extends StatefulWidget {
   // final Post post;
 
-  const _PostStats({
-    super.key,
-    // required this.post,
-  });
+  const _PostStats();
 
   @override
   State<_PostStats> createState() => _PostStatsState();
@@ -254,20 +251,20 @@ class _PostStatsState extends State<_PostStats> {
     double fontSize = 12;
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(4),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(4),
+            decoration: const BoxDecoration(
                 shape: BoxShape.circle, gradient: Palette.likeGradient),
-            child: Icon(
+            child: const Icon(
               Icons.thumb_up,
               color: Colors.white,
               size: 8,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 4,
           ),
           Text(
@@ -278,8 +275,8 @@ class _PostStatsState extends State<_PostStats> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          Spacer(),
-          SizedBox(
+          const Spacer(),
+          const SizedBox(
             width: 8,
           ),
         ],
@@ -296,12 +293,10 @@ class _PostButton extends StatefulWidget {
   final Colors? tappedColor;
 
   const _PostButton(
-      {super.key,
-      required this.onTap,
+      {required this.onTap,
       required this.label,
       required this.icon,
-      this.tappedIcon,
-      this.tappedColor});
+      this.tappedIcon});
 
   @override
   State<_PostButton> createState() => _PostButtonState();
@@ -328,7 +323,7 @@ class _PostButtonState extends State<_PostButton> {
             });
             widget.onTap();
           },
-          child: Container(
+          child: SizedBox(
             height: 30,
             width: double.infinity,
             child: Row(
@@ -337,7 +332,7 @@ class _PostButtonState extends State<_PostButton> {
                 isTap && widget.tappedIcon != null
                     ? widget.tappedIcon!
                     : widget.icon,
-                SizedBox(
+                const SizedBox(
                   width: 4,
                 ),
                 Text(
@@ -362,7 +357,7 @@ class _PostButtonState extends State<_PostButton> {
 class _PostFooter extends StatefulWidget {
   final Post post;
 
-  const _PostFooter({super.key, required this.post});
+  const _PostFooter({required this.post});
 
   @override
   State<_PostFooter> createState() => _PostFooterState();
@@ -376,10 +371,10 @@ class _PostFooterState extends State<_PostFooter> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
           child: Divider(
             height: 0,
@@ -434,26 +429,26 @@ class _PostFooterState extends State<_PostFooter> {
             ],
           ),
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
           child: Divider(
             height: 0,
           ),
         ),
-        _PostStats(),
+        const _PostStats(),
         Container(
-          child: Divider(
+          child: const Divider(
             height: 0,
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 6,
             horizontal: 12,
           ),
           child: Text(
             "${context.watch<PostNotifier>().shares} shares",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               color: Colors.black,
               fontWeight: FontWeight.w500,

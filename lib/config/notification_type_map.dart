@@ -10,13 +10,13 @@ var NotificationTypeToIconButtonMap = {
   NotificationType.updatePost: Container(
     height: 23,
     width: 23,
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       color: Palette.facebookBlue,
       shape: BoxShape.circle,
     ),
     child: IconButton(
       padding: EdgeInsets.zero,
-      icon: Icon(
+      icon: const Icon(
         Icons.message,
         color: Colors.white,
         size: 15,

@@ -25,6 +25,7 @@ class _FriendScreenState extends State<FriendScreen> {
         children: [
           Container(
             child: CustomScrollView(
+              physics: BouncingScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(
                   child: Container(

@@ -132,7 +132,7 @@ final List<User> onlineUsers = [
   User(
     name: "Bonnouji Momoha",
     imageURL:
-        "https://static.wikia.nocookie.net/100kanojo/images/9/9c/BonnoujiMomoha.png/revision/latest?cb=20240103155122",
+        "https://static.wikia.nocookie.net/100kanojo/images/2/2c/HeadshotMomoha.png/revision/latest?cb=20240103155122",
   ),
 ];
 

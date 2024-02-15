@@ -17,6 +17,8 @@ class FacebookWideLabelButtonContainer extends StatefulWidget {
 class _FacebookWideLabelButtonContainerState
     extends State<FacebookWideLabelButtonContainer> {
   bool isTapped = false;
+  double containerHeight = 0;
+  final _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class _FacebookWideLabelButtonContainerState
         // height: 20,
         child: GestureDetector(
           onTapDown: (_) {
+            containerHeight = _key.currentContext!.size!.height;
             isTapped = true;
             setState(() {});
           },
@@ -43,6 +46,7 @@ class _FacebookWideLabelButtonContainerState
           child: Stack(
             children: [
               Container(
+                key: _key,
                 width: double.maxFinite,
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
@@ -60,7 +64,7 @@ class _FacebookWideLabelButtonContainerState
               // Flexible(
               Container(
                 width: double.infinity,
-                height: 32,
+                height: containerHeight,
                 decoration: BoxDecoration(
                     color: isTapped
                         ? Colors.grey.withOpacity(0.2)

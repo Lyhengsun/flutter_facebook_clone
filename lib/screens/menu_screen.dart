@@ -403,6 +403,7 @@ class BuildMenuButtonDelegate extends StatefulWidget {
 class _BuildMenuButtonDelegateState extends State<BuildMenuButtonDelegate> {
   final _key = GlobalKey();
   bool isTapped = false;
+  double containerWidth = 0;
   double containerHeight = 0;
 
   @override
@@ -410,6 +411,7 @@ class _BuildMenuButtonDelegateState extends State<BuildMenuButtonDelegate> {
     return GestureDetector(
       onTapDown: (_) {
         containerHeight = _key.currentContext!.size!.height;
+        containerWidth = _key.currentContext!.size!.width;
         isTapped = true;
         setState(() {});
       },
@@ -467,8 +469,9 @@ class _BuildMenuButtonDelegateState extends State<BuildMenuButtonDelegate> {
             ),
           ),
           Container(
-            width: double.maxFinite-5,
-            height: containerHeight==0 ? 0 : containerHeight-2,
+            margin: const EdgeInsets.symmetric(horizontal: 4),
+            width: containerWidth == 0 ? 0 : containerWidth - 8,
+            height: containerHeight == 0 ? 0 : containerHeight - 8,
             decoration: BoxDecoration(
               color:
                   isTapped ? Colors.grey.withOpacity(0.2) : Colors.transparent,

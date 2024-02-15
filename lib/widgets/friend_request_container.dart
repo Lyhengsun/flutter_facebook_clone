@@ -13,7 +13,7 @@ class FriendRequestContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 0, 15, 20),
+      padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
       color: Colors.white,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,21 +22,21 @@ class FriendRequestContainer extends StatelessWidget {
             imageUrl: friendRequest.user.imageURL,
             size: 85,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Expanded(
-            child: Container(
+            child: SizedBox(
               height: 88,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   buildFriendRequestHeaderWidget(),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   buildMutualFriendsWidget(),
-                  Spacer(),
+                  const Spacer(),
                   buildFriendReqButtons(),
                 ],
               ),
@@ -55,14 +55,14 @@ class FriendRequestContainer extends StatelessWidget {
           Container(
             child: Text(
               friendRequest.user.name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 height: 0,
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           FacebookDurationLabel(duration: friendRequest.requestDuration),
         ],
       ),
@@ -103,12 +103,12 @@ class FriendRequestContainer extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 2,
         ),
         Text(
           "${friendRequest.mutualFriendsAmount} mutual friends",
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
             color: Colors.black54,
           ),
@@ -126,10 +126,10 @@ class FriendRequestContainer extends StatelessWidget {
           backgroundColor: Palette.facebookBlue,
           foregroundColor: Colors.white,
           onTap: () {
-            print("Confirmed");
+            // print("Confirmed");
           },
         ),
-        SizedBox(
+        const SizedBox(
           width: 4,
         ),
         FriendReqButton(
@@ -164,6 +164,8 @@ class FriendReqButton extends StatefulWidget {
 
 class _FriendReqButtonState extends State<FriendReqButton> {
   bool isTap = false;
+  double widgetHeight = 0;
+  final _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -172,6 +174,7 @@ class _FriendReqButtonState extends State<FriendReqButton> {
         onTapDown: (_) {
           widget.onTap();
           isTap = true;
+          widgetHeight = _key.currentContext!.size!.height;
           setState(() {});
         },
         onTapUp: (_) {
@@ -187,11 +190,12 @@ class _FriendReqButtonState extends State<FriendReqButton> {
           child: Stack(
             children: [
               Container(
+                key: _key,
                 width: double.infinity,
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: widget.backgroundColor,
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  borderRadius: const BorderRadius.all(Radius.circular(5)),
                 ),
                 child: Text(
                   widget.label,
@@ -205,10 +209,10 @@ class _FriendReqButtonState extends State<FriendReqButton> {
               ),
               Container(
                 width: double.infinity,
-                height: 32,
+                height: widgetHeight,
                 decoration: BoxDecoration(
                     color: isTap ? Colors.black.withOpacity(0.2) : Colors.transparent,
-                    borderRadius: BorderRadius.all(Radius.circular(5))),
+                    borderRadius: const BorderRadius.all(Radius.circular(5))),
               ),
             ],
           ),

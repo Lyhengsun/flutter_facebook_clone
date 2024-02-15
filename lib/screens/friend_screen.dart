@@ -40,7 +40,7 @@ class _FriendScreenState extends State<FriendScreen> {
                   child: _divider(),
                 ),
                 const SliverToBoxAdapter(
-                  child: _friendRequestHeader(),
+                  child: _FriendRequestHeader(),
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
@@ -69,7 +69,7 @@ class _FriendScreenState extends State<FriendScreen> {
                   child: _divider(),
                 ),
                 const SliverToBoxAdapter(
-                  child: _friendSuggestionHeader(),
+                  child: _FriendSuggestionHeader(),
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
@@ -143,8 +143,8 @@ class _FriendScreenState extends State<FriendScreen> {
   }
 }
 
-class _friendRequestHeader extends StatelessWidget {
-  const _friendRequestHeader();
+class _FriendRequestHeader extends StatelessWidget {
+  const _FriendRequestHeader();
 
   @override
   Widget build(BuildContext context) {
@@ -172,8 +172,8 @@ class _friendRequestHeader extends StatelessWidget {
   }
 }
 
-class _friendSuggestionHeader extends StatelessWidget {
-  const _friendSuggestionHeader();
+class _FriendSuggestionHeader extends StatelessWidget {
+  const _FriendSuggestionHeader();
 
   @override
   Widget build(BuildContext context) {

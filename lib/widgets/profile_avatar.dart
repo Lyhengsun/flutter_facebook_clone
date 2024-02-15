@@ -15,8 +15,8 @@ class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar({
     super.key,
     required this.imageUrl,
-    this.backgroundColor = null,
-    this.unviewedStory = null,
+    this.backgroundColor,
+    this.unviewedStory,
     this.isActive = false,
     this.addStory = false,
     this.viewedStory = false,

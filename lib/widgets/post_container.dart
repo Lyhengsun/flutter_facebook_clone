@@ -21,39 +21,39 @@ class _PostContainerState extends State<PostContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 6),
-      padding: EdgeInsets.only(top: 5),
+      margin: const EdgeInsets.only(top: 6),
+      padding: const EdgeInsets.only(top: 5),
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _PostHeader(
                   post: widget.post,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
                 Text(
                   widget.post.caption,
-                  style: TextStyle(fontSize: 12),
+                  style: const TextStyle(fontSize: 12),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           widget.post.imageURL == null
-              ? SizedBox.shrink()
+              ? const SizedBox.shrink()
               : CachedNetworkImage(
                   imageUrl: widget.post.imageURL!,
                 ),
-          Divider(
+          const Divider(
             height: 0,
             thickness: 1,
           ),
@@ -76,7 +76,7 @@ class _PostContainerState extends State<PostContainer> {
 class _PostHeader extends StatelessWidget {
   final Post post;
 
-  const _PostHeader({super.key, required this.post});
+  const _PostHeader({required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,8 @@ class _PostHeader extends StatelessWidget {
             children: [
               Text(
                 post.user.name,
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                style:
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -107,11 +108,11 @@ class _PostHeader extends StatelessWidget {
                   FacebookDurationLabel(
                     duration: post.timeAgo,
                   ),
-                  Text(
+                  const Text(
                     " • ",
                     style: TextStyle(fontSize: 10, color: Colors.black54),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.public,
                     size: 12,
                     color: Colors.black54,
@@ -123,7 +124,7 @@ class _PostHeader extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.more_horiz),
+          icon: const Icon(Icons.more_horiz),
         )
       ],
     );
@@ -133,10 +134,7 @@ class _PostHeader extends StatelessWidget {
 class _PostStats extends StatefulWidget {
   // final Post post;
 
-  const _PostStats({
-    super.key,
-    // required this.post,
-  });
+  const _PostStats();
 
   @override
   State<_PostStats> createState() => _PostStatsState();
@@ -157,20 +155,20 @@ class _PostStatsState extends State<_PostStats> {
     double fontSize = 12;
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(4),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(4),
+            decoration: const BoxDecoration(
                 shape: BoxShape.circle, gradient: Palette.likeGradient),
-            child: Icon(
+            child: const Icon(
               Icons.thumb_up,
               color: Colors.white,
               size: 8,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 4,
           ),
           Text(
@@ -181,7 +179,7 @@ class _PostStatsState extends State<_PostStats> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             "${context.watch<PostNotifier>().comments} comments",
             style: TextStyle(
@@ -190,7 +188,7 @@ class _PostStatsState extends State<_PostStats> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           Text(
@@ -251,15 +249,14 @@ class _PostButton extends StatefulWidget {
   final String label;
   final Icon icon;
   final Icon? tappedIcon;
-  final Colors? tappedColor;
+  // final Colors? tappedColor;
 
-  const _PostButton(
-      {super.key,
-      required this.onTap,
-      required this.label,
-      required this.icon,
-      this.tappedIcon,
-      this.tappedColor});
+  const _PostButton({
+    required this.onTap,
+    required this.label,
+    required this.icon,
+    this.tappedIcon,
+  });
 
   @override
   State<_PostButton> createState() => _PostButtonState();
@@ -286,7 +283,7 @@ class _PostButtonState extends State<_PostButton> {
             });
             widget.onTap();
           },
-          child: Container(
+          child: SizedBox(
             height: 30,
             width: double.infinity,
             child: Row(
@@ -295,7 +292,7 @@ class _PostButtonState extends State<_PostButton> {
                 isTap && widget.tappedIcon != null
                     ? widget.tappedIcon!
                     : widget.icon,
-                SizedBox(
+                const SizedBox(
                   width: 4,
                 ),
                 Text(
@@ -320,7 +317,7 @@ class _PostButtonState extends State<_PostButton> {
 class _PostFooter extends StatefulWidget {
   final Post post;
 
-  const _PostFooter({super.key, required this.post});
+  const _PostFooter({required this.post});
 
   @override
   State<_PostFooter> createState() => _PostFooterState();
@@ -333,8 +330,8 @@ class _PostFooterState extends State<_PostFooter> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _PostStats(),
-        Padding(
+        const _PostStats(),
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
           child: Divider(
             height: 0,
